@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Bezemer Home &amp; Pest Inspections — Adelaide building and pest inspections</title>
-<meta name="description" content="Pre-purchase building and pest inspections across Adelaide. Forty years on the tools, one afternoon on your house.">
+<title>Hartley Home &amp; Pest Inspections — Reference Concept</title>
+<meta name="description" content="Pre-purchase building and pest inspections. Reference concept by Valkyra Labs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -16,7 +16,6 @@
   --navy-2:#0C2E3A;
   --navy-deep:#061419;
   --ivory:#F6F3ED;
-  --ivory-2:#EFE9DC;
   --ink:#16262E;
   --ink-soft:#4A5C66;
   --muted:#7A8A93;
@@ -43,11 +42,9 @@ img{display:block;max-width:100%}
 .skip{position:absolute;left:-9999px;background:var(--ochre);color:var(--navy);padding:12px 18px;z-index:200;font-weight:700}
 .skip:focus{left:14px;top:14px}
 
-/* ── texture ── */
 .grain::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.03;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* ── surfaces ── */
 .s-navy{background:
   radial-gradient(ellipse 60% 50% at 6% 100%, rgba(201,162,74,.15), transparent 58%),
   radial-gradient(ellipse 70% 50% at 100% 0%, rgba(26,142,154,.14), transparent 52%),
@@ -58,8 +55,8 @@ img{display:block;max-width:100%}
   linear-gradient(180deg,#FBF9F5 0%,var(--ivory) 52%,#ECE5D7 100%);position:relative}
 .s-paper{background:linear-gradient(180deg,#FFFEFB 0%,#FAF8F3 100%);position:relative}
 
-/* ── nav ── */
-.nav{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--nav-h);transition:background .45s var(--ease),border-color .45s var(--ease),backdrop-filter .45s}
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--nav-h);transition:background .45s var(--ease),backdrop-filter .45s}
 .nav::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:transparent;transition:background .45s}
 .nav.solid{background:rgba(6,20,25,.9);backdrop-filter:blur(16px) saturate(1.2)}
 .nav.solid::after{background:var(--line-dark)}
@@ -75,34 +72,17 @@ img{display:block;max-width:100%}
 .ncall{font-size:13.5px;font-weight:700;background:var(--ochre);color:var(--navy);padding:11px 19px;border-radius:999px;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 18px rgba(201,162,74,.22);transition:transform .3s var(--ease),box-shadow .3s}
 .ncall:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 26px rgba(201,162,74,.34)}
 
-/* ── hero ── */
+/* hero */
 .hero{position:relative;min-height:min(94svh,880px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--navy-deep)}
 .hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero-img{position:absolute;inset:-4%;background-image:url("https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2200&q=80");
-  background-size:cover;background-position:center 42%;filter:contrast(1.05) saturate(.98) brightness(.9);
-  animation:kb 26s ease-out alternate infinite}
+  background-size:cover;background-position:center 42%;filter:contrast(1.05) saturate(.98) brightness(.9);animation:kb 26s ease-out alternate infinite}
 @keyframes kb{0%{transform:scale(1.03) translate3d(0,0,0)}100%{transform:scale(1.11) translate3d(-1.2%,-.9%,0)}}
 .hero-media::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
-  linear-gradient(102deg,
-    rgba(var(--hero-blend),.97) 0%,
-    rgba(var(--hero-blend),.93) 20%,
-    rgba(var(--hero-blend),.76) 38%,
-    rgba(var(--hero-blend),.44) 54%,
-    rgba(var(--hero-blend),.16) 70%,
-    transparent 90%),
-  linear-gradient(180deg,
-    rgba(var(--hero-blend),.62) 0%,
-    rgba(var(--hero-blend),.2) 26%,
-    transparent 50%,
-    rgba(var(--hero-blend),.5) 86%,
-    rgba(var(--hero-blend),.86) 100%)}
+  linear-gradient(102deg,rgba(var(--hero-blend),.97) 0%,rgba(var(--hero-blend),.93) 20%,rgba(var(--hero-blend),.76) 38%,rgba(var(--hero-blend),.44) 54%,rgba(var(--hero-blend),.16) 70%,transparent 90%),
+  linear-gradient(180deg,rgba(var(--hero-blend),.62) 0%,rgba(var(--hero-blend),.2) 26%,transparent 50%,rgba(var(--hero-blend),.5) 86%,rgba(var(--hero-blend),.86) 100%)}
 @media(max-width:820px){
-  .hero-media::after{background:linear-gradient(180deg,
-    rgba(var(--hero-blend),.95) 0%,
-    rgba(var(--hero-blend),.86) 30%,
-    rgba(var(--hero-blend),.62) 56%,
-    rgba(var(--hero-blend),.5) 74%,
-    rgba(var(--hero-blend),.9) 100%)}
+  .hero-media::after{background:linear-gradient(180deg,rgba(var(--hero-blend),.95) 0%,rgba(var(--hero-blend),.86) 30%,rgba(var(--hero-blend),.62) 56%,rgba(var(--hero-blend),.5) 74%,rgba(var(--hero-blend),.9) 100%)}
 }
 .hero-inner{position:relative;z-index:3;padding-top:calc(var(--nav-h) + clamp(3rem,7vw,5.5rem));padding-bottom:clamp(2rem,4vw,3rem)}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre-lt)}
@@ -118,7 +98,6 @@ img{display:block;max-width:100%}
 .btn-glass{border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.07);backdrop-filter:blur(10px);padding:17px 26px}
 .btn-glass:hover{transform:translateY(-3px);background:rgba(255,255,255,.13);border-color:var(--ochre)}
 
-/* trust — glass cards over hero base */
 .trust{position:relative;z-index:3;border-top:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(6,20,25,.34),rgba(6,20,25,.72));backdrop-filter:blur(10px)}
 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 .t-item{padding:24px 22px 26px 0;border-right:1px solid rgba(255,255,255,.11)}
@@ -133,26 +112,23 @@ img{display:block;max-width:100%}
   .t-item:nth-last-child(-n+2){border-bottom:0}
 }
 
-/* ── reveal ── */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.hero .rv{transform:translateY(28px)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rv{opacity:1!important;transform:none!important;transition:none}
-  .hero-img{animation:none}
+  .hero-img,.band-media .ph{animation:none}
 }
 
-/* ── sections ── */
 section{padding:var(--pad) 0;position:relative}
 .kick{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
-.s-navy .kick{color:var(--ochre)}
+.s-navy .kick,.band .kick{color:var(--ochre)}
 h2{font-size:clamp(2.05rem,4.4vw,3.4rem);max-width:16ch}
-.s-navy h2{color:#fff}
+.s-navy h2,.band h2{color:#fff}
 .sub{margin-top:18px;max-width:54ch;color:var(--ink-soft);font-size:1.05rem}
-.s-navy .sub{color:rgba(246,243,237,.72)}
+.s-navy .sub,.band .sub{color:rgba(246,243,237,.72)}
 
-/* ── walkthrough ── */
+/* walkthrough */
 .walk-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;margin-top:46px;align-items:start}
 @media(max-width:980px){.walk-grid{grid-template-columns:1fr;gap:30px}}
 .house{position:relative;width:100%;aspect-ratio:8/5.7;border:1px solid var(--line-dark);border-radius:16px;overflow:hidden;
@@ -178,14 +154,14 @@ h2{font-size:clamp(2.05rem,4.4vw,3.4rem);max-width:16ch}
 .z-note span{color:rgba(246,243,237,.88);font-size:15.5px}
 .hint{margin-top:18px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,243,237,.45)}
 
-/* ── report ── */
+/* report */
 .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 @media(max-width:940px){.report-grid{grid-template-columns:1fr;gap:36px}}
 .report-photo{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3.2;box-shadow:0 30px 60px rgba(10,37,51,.18)}
 .report-photo .ph{position:absolute;inset:0;background-image:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80");background-size:cover;background-position:center;filter:contrast(1.03) saturate(.94) brightness(1.02);transition:transform 1.2s var(--ease)}
 .report-photo:hover .ph{transform:scale(1.05)}
 .report-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(246,243,237,0) 40%,rgba(10,37,51,.55) 100%)}
-.pg-float{position:absolute;z-index:2;left:8%;bottom:7%;right:8%;background:rgba(255,255,255,.97);border-radius:12px;padding:18px 20px;box-shadow:0 20px 44px rgba(10,37,51,.26);backdrop-filter:blur(4px)}
+.pg-float{position:absolute;z-index:2;left:8%;bottom:7%;right:8%;background:rgba(255,255,255,.97);border-radius:12px;padding:18px 20px;box-shadow:0 20px 44px rgba(10,37,51,.26)}
 .pg-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--navy);padding-bottom:9px}
 .pg-head strong{font-family:var(--serif);font-size:15px;font-weight:600}
 .pg-head span{font-size:9px;letter-spacing:.13em;font-weight:700;color:var(--muted)}
@@ -199,7 +175,7 @@ h2{font-size:clamp(2.05rem,4.4vw,3.4rem);max-width:16ch}
 .btn-dark:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 16px 36px rgba(10,37,51,.28)}
 .btn-dark small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.13em;opacity:.6;margin-top:3px}
 
-/* ── steps ── */
+/* steps */
 .steps{margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 @media(max-width:940px){.steps{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
@@ -209,36 +185,48 @@ h2{font-size:clamp(2.05rem,4.4vw,3.4rem);max-width:16ch}
 .step h3{font-size:1.24rem;margin:13px 0 9px}
 .step p{font-size:14.8px;color:var(--ink-soft)}
 
-/* ── reviews ── */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+/* reviews */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
 @media(max-width:860px){.cards{grid-template-columns:1fr}}
-.card{border:1px dashed rgba(10,37,51,.2);border-radius:16px;padding:26px;background:rgba(255,255,255,.6);transition:border-color .4s,background .4s}
-.card:hover{border-color:rgba(201,162,74,.5);background:#fff}
+.card{border:1px solid var(--line);border-radius:16px;padding:28px 26px;background:#fff;display:flex;flex-direction:column;gap:16px;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(10,37,51,.1);border-color:rgba(201,162,74,.4)}
 .stars{color:var(--ochre);letter-spacing:3px;font-size:14px}
-.redact{margin-top:16px}
-.redact i{display:block;height:9px;border-radius:4px;background:rgba(10,37,51,.09);margin-bottom:9px}
-.redact i:nth-child(2){width:86%}
-.redact i:nth-child(3){width:62%}
-.card .lbl{margin-top:16px;font-size:9.5px;letter-spacing:.15em;font-weight:700;color:var(--muted)}
-.gap-note{margin-top:30px;font-size:16.5px;color:var(--ink-soft);max-width:64ch}
-.gap-note b{color:var(--ink)}
+.card blockquote{font-family:var(--sans);font-size:15.8px;line-height:1.55;color:var(--ink);letter-spacing:0}
+.who{margin-top:auto;display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--line)}
+.av{width:40px;height:40px;border-radius:50%;flex:none;background-size:cover;background-position:center;filter:saturate(.95)}
+.who p{font-size:13.5px;font-weight:600;line-height:1.3}
+.who p span{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
 
-/* ── quote band with photo ── */
+/* band with portrait */
 .band{position:relative;overflow:hidden;background:var(--navy-deep)}
 .band-media{position:absolute;inset:0;z-index:0}
 .band-media .ph{position:absolute;inset:-3%;background-image:url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1900&q=80");background-size:cover;background-position:center 40%;filter:contrast(1.04) saturate(.9) brightness(.72);animation:kb 30s ease-out alternate infinite}
 .band-media::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(102deg,rgba(var(--hero-blend),.96) 0%,rgba(var(--hero-blend),.9) 28%,rgba(var(--hero-blend),.66) 48%,rgba(var(--hero-blend),.36) 66%,rgba(var(--hero-blend),.6) 100%),
-  linear-gradient(180deg,rgba(var(--hero-blend),.6),rgba(var(--hero-blend),.3) 40%,rgba(var(--hero-blend),.72))}
+  linear-gradient(102deg,rgba(var(--hero-blend),.97) 0%,rgba(var(--hero-blend),.93) 30%,rgba(var(--hero-blend),.78) 52%,rgba(var(--hero-blend),.5) 72%,rgba(var(--hero-blend),.72) 100%),
+  linear-gradient(180deg,rgba(var(--hero-blend),.6),rgba(var(--hero-blend),.35) 40%,rgba(var(--hero-blend),.75))}
 .band .wrap{position:relative;z-index:2}
-.quote-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px}
-@media(max-width:880px){.quote-grid{grid-template-columns:1fr;gap:30px}}
-blockquote{font-size:clamp(1.4rem,2.9vw,2rem);line-height:1.26;color:#fff}
-blockquote::before{content:"“";display:block;font-family:var(--serif);font-size:4rem;line-height:.6;color:var(--ochre);margin-bottom:14px}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:36px}}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;box-shadow:0 30px 64px rgba(0,0,0,.45)}
+.portrait .ph{position:absolute;inset:0;background-image:url("https://images.unsplash.com/photo-1618090584176-7132b9911657?auto=format&fit=crop&w=1100&q=80");background-size:cover;background-position:32% 22%;filter:contrast(1.05) saturate(.96) brightness(.94);transition:transform 1.2s var(--ease)}
+.portrait:hover .ph{transform:scale(1.05)}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,20,25,.85) 100%)}
+.portrait figcaption{position:absolute;z-index:2;left:20px;right:20px;bottom:18px}
+.portrait figcaption b{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;letter-spacing:-.02em}
+.portrait figcaption span{display:block;margin-top:5px;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre-lt)}
+.portrait-frame{position:relative}
+.portrait-frame::before{content:"";position:absolute;left:-14px;top:-14px;width:56%;height:56%;border-left:1px solid rgba(201,162,74,.55);border-top:1px solid rgba(201,162,74,.55);border-radius:16px 0 0 0;pointer-events:none}
+@media(max-width:900px){
+  .portrait{aspect-ratio:3/2;max-width:520px}
+  .portrait-frame{max-width:520px}
+}
+blockquote.big{font-size:clamp(1.4rem,2.9vw,2rem);line-height:1.26;color:#fff}
+blockquote.big::before{content:"“";display:block;font-family:var(--serif);font-size:4rem;line-height:.6;color:var(--ochre);margin-bottom:14px}
 cite{display:block;margin-top:22px;font-family:var(--sans);font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.17em;color:var(--ochre-lt)}
-.quote-grid p{color:rgba(255,255,255,.76);margin-bottom:16px}
+.band p.body{color:rgba(255,255,255,.76);margin-top:22px}
 
-/* ── contact ── */
+/* contact */
 .contact-inner{position:relative;border-radius:26px;overflow:hidden;padding:clamp(2.6rem,5.5vw,4.5rem);color:#fff;isolation:isolate}
 .contact-inner .ph{position:absolute;inset:0;z-index:-2;background-image:url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80");background-size:cover;background-position:center;filter:brightness(.6) saturate(.9)}
 .contact-inner::after{content:"";position:absolute;inset:0;z-index:-1;background:
@@ -267,14 +255,14 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
 
 <nav class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#">Bezemer Home &amp; Pest<span>BLD LIC R37257 · ADELAIDE SA</span></a>
+    <a class="brand" href="#">Hartley Home &amp; Pest<span>BLD LIC 000000 · ADELAIDE SA</span></a>
     <div class="nlinks">
       <a href="#walk">The inspection</a>
       <a href="#report">The report</a>
       <a href="#how">How it runs</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="ncall" href="tel:+61402105177">0402 105 177</a>
+    <a class="ncall" href="tel:0400000000">0400 000 000</a>
   </div>
 </nav>
 
@@ -283,20 +271,20 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
   <div class="hero-inner">
     <div class="wrap">
       <p class="eyebrow rv">Pre-purchase building &amp; pest · South Australia</p>
-      <h1 class="rv">Forty years on the tools. <em>One afternoon</em> on your house.</h1>
-      <p class="lede rv">Robert Bezemer built homes in South Australia for four decades. Now he walks through the one you're about to buy and tells you plainly what he found.</p>
+      <h1 class="rv">Twenty years on the tools. <em>One afternoon</em> on your house.</h1>
+      <p class="lede rv">David Hartley built homes in South Australia for two decades. Now he walks through the one you're about to buy and tells you plainly what he found.</p>
       <div class="acts rv">
-        <a class="btn btn-gold" href="tel:+61402105177">Ring or text Robert<small>0402 105 177 · SEVEN DAYS</small></a>
+        <a class="btn btn-gold" href="tel:0400000000">Ring or text David<small>0400 000 000 · SEVEN DAYS</small></a>
         <a class="btn btn-glass" href="#walk">See what he checks</a>
       </div>
     </div>
   </div>
   <div class="trust">
     <div class="wrap">
-      <div class="t-item rv"><b data-count="40">40</b><span>Years building in South Australia</span></div>
+      <div class="t-item rv"><b>20</b><span>Years building in South Australia</span></div>
       <div class="t-item rv"><b>1</b><span>Inspector on site, never a subbie</span></div>
       <div class="t-item rv"><b>Same day</b><span>Report in your inbox the evening he attends</span></div>
-      <div class="t-item rv"><b>R37257</b><span>SA building licence, check it yourself</span></div>
+      <div class="t-item rv"><b>000000</b><span>SA building licence, check it yourself</span></div>
     </div>
   </div>
 </header>
@@ -388,7 +376,28 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
       <div class="step rv"><p class="n">STEP 01</p><h3>Ring or text him</h3><p>Tell him the address and when your cooling-off period ends. He'll say straight away whether he can be there in time.</p></div>
       <div class="step rv"><p class="n">STEP 02</p><h3>He inspects it himself</h3><p>Two to three hours on site. Roof, roof void, subfloor, inside, outside, garage, retaining walls and drainage.</p></div>
       <div class="step rv"><p class="n">STEP 03</p><h3>Report the same evening</h3><p>Photographed, located and rated, with the summary on page one and the access limits named.</p></div>
-      <div class="step rv"><p class="n">STEP 04</p><h3>He rings to explain it</h3><p>Forty years of building in this state, on the phone, telling you what he'd do if it were his money.</p></div>
+      <div class="step rv"><p class="n">STEP 04</p><h3>He rings to explain it</h3><p>Twenty years of building in this state, on the phone, telling you what he'd do if it were his money.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band grain">
+  <div class="band-media"><div class="ph"></div></div>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait-frame rv">
+        <figure class="portrait">
+          <div class="ph"></div>
+          <figcaption><b>David Hartley</b><span>Licensed builder · BLD LIC 000000</span></figcaption>
+        </figure>
+      </div>
+      <div>
+        <p class="kick rv">Who turns up</p>
+        <blockquote class="big rv">I've built houses in this state for twenty years. I inspect them the same way I built them, and I tell you what I'd do if it were my money.</blockquote>
+        <cite class="rv">DAVID HARTLEY · BLD LIC 000000</cite>
+        <p class="body rv">David started on the tools in South Australia in the mid-2000s and spent two decades building, supervising and repairing homes across Adelaide. That's why the reports read the way they do: he's fixed most of what he finds.</p>
+        <p class="body rv">He inspects every property himself. No roster of subcontractors, no franchise office between you and the person who walked the roof void. If something in the report isn't clear, the number you ring is his.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -397,40 +406,36 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
   <div class="wrap">
     <p class="kick rv">Clients</p>
     <h2 class="rv">What clients say.</h2>
-    <p class="sub rv">Robert has no Google listing yet, so there's nothing here to quote. These are the slots. They fill the week the listing goes live.</p>
+    <p class="sub rv">Illustrative reviews for this demonstration site. On a live build these are quoted verbatim from the firm's Google listing.</p>
     <div class="cards">
-      <div class="card rv"><div class="stars">★★★★★</div><div class="redact" aria-hidden="true"><i></i><i></i><i></i></div><p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p></div>
-      <div class="card rv"><div class="stars">★★★★★</div><div class="redact" aria-hidden="true"><i></i><i></i><i></i></div><p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p></div>
-      <div class="card rv"><div class="stars">★★★★★</div><div class="redact" aria-hidden="true"><i></i><i></i><i></i></div><p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p></div>
-    </div>
-    <p class="gap-note rv">Six Adelaide inspection businesses rank above this one on Google. They hold between <b>94 and 473 reviews</b> each. Every one of Robert's clients has already had the phone call where he explains the report. The ask that turns those calls into reviews is one text message afterwards.</p>
-  </div>
-</section>
-
-<section class="band grain">
-  <div class="band-media"><div class="ph"></div></div>
-  <div class="wrap quote-grid">
-    <div class="rv">
-      <blockquote>I've built houses in this state for forty years. I inspect them the same way I built them, and I tell you what I'd do if it were my money.</blockquote>
-      <cite>ROBERT BEZEMER · BLD LIC R37257</cite>
-    </div>
-    <div>
-      <p class="rv">Robert started on the tools in South Australia in the mid-1980s and spent four decades building, supervising and repairing homes across Adelaide. That's why the reports read the way they do: he's fixed most of what he finds.</p>
-      <p class="rv">He inspects every property himself. No roster of subcontractors, no franchise office between you and the person who walked the roof void. If something in the report isn't clear, the number you ring is his.</p>
-      <p class="rv">Inspections are carried out to Australian Standards AS 4349.1 for building and AS 4349.3 for timber pests. The business carries current professional indemnity and public liability insurance.</p>
+      <div class="card rv">
+        <p class="stars">★★★★★</p>
+        <blockquote>“Booked on the Friday, report in my inbox that night. He rang the next morning and talked me through the two things that actually mattered before cooling-off ended.”</blockquote>
+        <div class="who"><span class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80')"></span><p>Sarah<span>Pre-purchase · Prospect</span></p></div>
+      </div>
+      <div class="card rv">
+        <p class="stars">★★★★★</p>
+        <blockquote>“Found stormwater discharging straight onto the footing that two other trades had walked past. Paid for itself before we signed anything.”</blockquote>
+        <div class="who"><span class="av" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80')"></span><p>James<span>Building &amp; pest · Unley</span></p></div>
+      </div>
+      <div class="card rv">
+        <p class="stars">★★★★★</p>
+        <blockquote>“No sales pitch and no scare tactics. Just what was wrong, what wasn't, and what he'd do about it if it were his money.”</blockquote>
+        <div class="who"><span class="av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80')"></span><p>Priya<span>Handover · Glenelg</span></p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="s-ivory" id="contact">
+<section class="s-ivory" id="contact" style="padding-top:0">
   <div class="wrap">
     <div class="contact-inner rv">
       <div class="ph"></div>
-      <h2>Ring or text Robert. Seven days.</h2>
+      <h2>Ring or text David. Seven days.</h2>
       <p class="sub">Tell him the address and the date your cooling-off period ends. That's the whole booking process.</p>
-      <a class="phone" href="tel:+61402105177">0402 105 177</a>
+      <a class="phone" href="tel:0400000000">0400 000 000</a>
       <p class="c-meta">7am – 8pm · Adelaide &amp; surrounds</p>
-      <p class="c-mail">Or email <a href="mailto:bez@home-inspection.com.au">bez@home-inspection.com.au</a></p>
+      <p class="c-mail">Or email <a href="mailto:hello@hartley.example">hello@hartley.example</a></p>
     </div>
   </div>
 </section>
@@ -440,20 +445,19 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
 <footer>
   <div class="wrap">
     <div class="fline">
-      <div>Bezemer Home &amp; Pest Inspections · Adelaide, South Australia</div>
-      <div>BLD LIC R37257</div>
+      <div>Hartley Home &amp; Pest Inspections · Adelaide, South Australia</div>
+      <div>BLD LIC 000000</div>
     </div>
-    <p class="disc">This page is an unsolicited design concept prepared by Valkyra Labs. It is not affiliated with, endorsed by, or operated by Bezemer Home &amp; Pest Inspections. Business name, phone number, email address and licence number were taken from the live website at home-inspection.com.au. Photography is licensed stock imagery used for layout demonstration and does not show this business, its staff or any property it has inspected. The sample report extract, trading hours and turnaround time are illustrative. Review slots are deliberately blank. Nothing here is a quote or an offer.</p>
+    <p class="disc">Hartley Home &amp; Pest Inspections is a fictional business created by Valkyra Labs to demonstrate homepage layout and content structure for pre-purchase inspection operators. The inspector's name, licence number, phone number, email address, reviews and credentials are placeholder data and do not describe a real business or a real person. All photography is licensed stock imagery used for layout demonstration; the people shown are models and are not staff, and the properties shown have not been inspected by anyone. The sample report extract is illustrative. Nothing here is a quote or an offer.</p>
   </div>
 </footer>
 
-<div class="tag">CONCEPT · VALKYRA LABS</div>
+<div class="tag">REFERENCE CONCEPT · VALKYRA LABS</div>
 
 <script>
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* nav solidify + scroll progress */
   var nav = document.getElementById('nav'), prog = document.getElementById('prog');
   function onScroll(){
     var y = window.pageYOffset || document.documentElement.scrollTop;
@@ -464,7 +468,6 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* zones */
   var zones = [
     {title:"Roof exterior",check:"Tiles, ridge capping, valleys, flashings, gutters and downpipes, walked where it's safe to walk.",list:["Cracked or slipped tiles and bedding","Ridge capping and pointing","Valley flashings and penetrations","Gutter fall, rust and overflow","Downpipe connections"],note:"Lifted valley flashing. It's the usual source of the ceiling stain everyone blames on the bathroom."},
     {title:"Roof void",check:"Up through the manhole with a torch, across the framing where the ceiling will carry weight.",list:["Rafters, purlins and hanging beams","Water staining and active leaks","Insulation coverage and clearances","Downlight clearance to insulation","Vermin and termite leads"],note:"Insulation packed hard against downlights. Costs nothing to pull back and it's a fire risk sitting above the bedrooms."},
@@ -497,11 +500,10 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
     b.addEventListener('mouseenter', function(){ show(i); });
   });
   show(0);
-  var firstPing = document.createElement('span');
-  firstPing.className = 'ping'; firstPing.setAttribute('aria-hidden','true');
-  if(!reduce && !hots[0].querySelector('.ping')) hots[0].appendChild(firstPing);
+  if(!reduce && !hots[0].querySelector('.ping')){
+    var p = document.createElement('span'); p.className = 'ping'; p.setAttribute('aria-hidden','true'); hots[0].appendChild(p);
+  }
 
-  /* staggered reveal */
   var rv = [].slice.call(document.querySelectorAll('.rv'));
   if('IntersectionObserver' in window && !reduce){
     var io = new IntersectionObserver(function(entries){
@@ -517,7 +519,6 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
     rv.forEach(function(el){ io.observe(el); });
   } else { rv.forEach(function(el){ el.classList.add('in'); }); }
 
-  /* hero entrance */
   window.addEventListener('load', function(){
     document.querySelectorAll('.hero .rv').forEach(function(el, i){
       setTimeout(function(){ el.classList.add('in'); }, reduce ? 0 : 120 * i);
