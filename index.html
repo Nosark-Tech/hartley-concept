@@ -84,7 +84,7 @@ img{display:block;max-width:100%}
 @media(max-width:820px){
   .hero-media::after{background:linear-gradient(180deg,rgba(var(--hero-blend),.95) 0%,rgba(var(--hero-blend),.86) 30%,rgba(var(--hero-blend),.62) 56%,rgba(var(--hero-blend),.5) 74%,rgba(var(--hero-blend),.9) 100%)}
 }
-.hero-inner{position:relative;z-index:3;padding-top:calc(var(--nav-h) + clamp(3rem,7vw,5.5rem));padding-bottom:clamp(2rem,4vw,3rem)}
+.hero-inner{position:relative;z-index:3;flex:none;padding-top:calc(var(--nav-h) + clamp(1.1rem,3vw,2.1rem));padding-bottom:clamp(2rem,4vw,3rem)}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre-lt)}
 .eyebrow::before{content:"";width:30px;height:1px;background:var(--ochre)}
 .hero h1{font-size:clamp(2.4rem,6vw,4.5rem);color:#fff;max-width:13.5ch;margin-top:24px;text-shadow:0 2px 30px rgba(0,0,0,.3)}
@@ -98,17 +98,18 @@ img{display:block;max-width:100%}
 .btn-glass{border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.07);backdrop-filter:blur(10px);padding:17px 26px}
 .btn-glass:hover{transform:translateY(-3px);background:rgba(255,255,255,.13);border-color:var(--ochre)}
 
-.trust{position:relative;z-index:3;border-top:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(6,20,25,.34),rgba(6,20,25,.72));backdrop-filter:blur(10px)}
+.trust{position:relative;z-index:3;flex:none;border-top:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(6,20,25,.34),rgba(6,20,25,.72));backdrop-filter:blur(10px)}
 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.t-item{padding:24px 22px 26px 0;border-right:1px solid rgba(255,255,255,.11)}
-.t-item:last-child{border-right:0}
+.t-item{padding:26px 30px;border-right:1px solid rgba(255,255,255,.11)}
+.t-item:first-child{padding-left:0}
+.t-item:last-child{border-right:0;padding-right:0}
 .t-item b{display:block;font-family:var(--serif);font-size:clamp(1.65rem,2.8vw,2.3rem);font-weight:500;color:#fff;letter-spacing:-.03em}
 .t-item span{display:block;margin-top:7px;font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.6;max-width:19ch}
 @media(max-width:820px){
   .trust .wrap{grid-template-columns:1fr 1fr}
-  .t-item{padding:18px 14px 18px 0;border-bottom:1px solid rgba(255,255,255,.11)}
-  .t-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.11)}
-  .t-item:nth-child(even){border-right:0}
+  .t-item{padding:20px 20px;border-bottom:1px solid rgba(255,255,255,.11)}
+  .t-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.11);padding-left:0}
+  .t-item:nth-child(even){border-right:0;padding-right:0}
   .t-item:nth-last-child(-n+2){border-bottom:0}
 }
 
@@ -240,9 +241,20 @@ cite{display:block;margin-top:22px;font-family:var(--sans);font-style:normal;fon
 .c-mail{margin-top:24px;color:rgba(255,255,255,.72)}
 .c-mail a{color:#fff;font-weight:600;border-bottom:1px solid rgba(255,255,255,.35)}
 
-footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F3}
-.fline{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line)}
-.disc{margin-top:18px;font-size:12.3px;line-height:1.65;max-width:80ch}
+footer{background:#EFEADF;border-top:1px solid var(--line);padding:clamp(3rem,6vw,4.5rem) 0 78px;color:#55625A}
+@media(max-width:700px){footer{padding-bottom:34px}}
+.f-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.1fr;gap:clamp(26px,4vw,44px)}
+@media(max-width:880px){.f-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:520px){.f-top{grid-template-columns:1fr}}
+.f-brand strong{display:block;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.f-brand p{margin-top:12px;max-width:34ch;font-size:14px;line-height:1.62}
+.f-col h4{font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);margin-bottom:15px}
+.f-col ul{list-style:none}
+.f-col li{margin-bottom:10px;font-size:14px;line-height:1.45}
+.f-col a{color:#4A5A51;transition:color .25s}
+.f-col a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.f-bottom{margin-top:clamp(2.2rem,4vw,3.2rem);padding-top:22px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
 .tag{position:fixed;left:16px;bottom:16px;z-index:90;background:var(--navy);color:var(--ivory);font-size:9.5px;font-weight:700;letter-spacing:.11em;padding:8px 13px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.2)}
 @media(max-width:700px){.tag{display:none}}
 .prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--ochre),var(--ochre-lt));z-index:120;width:0;transition:width .1s linear}
@@ -444,11 +456,43 @@ footer{padding:42px 0 58px;font-size:13.5px;color:var(--muted);background:#FAF8F
 
 <footer>
   <div class="wrap">
-    <div class="fline">
-      <div>Hartley Home &amp; Pest Inspections · Adelaide, South Australia</div>
-      <div>BLD LIC 000000</div>
+    <div class="f-top">
+      <div class="f-brand">
+        <strong>Hartley Home &amp; Pest</strong>
+        <p>Pre-purchase building and timber pest inspections across Adelaide, carried out by the same person every time.</p>
+      </div>
+      <div class="f-col">
+        <h4>Inspections</h4>
+        <ul>
+          <li><a href="#walk">Pre-purchase building</a></li>
+          <li><a href="#walk">Timber pest</a></li>
+          <li><a href="#report">Combined report</a></li>
+          <li><a href="#how">New build handover</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>The business</h4>
+        <ul>
+          <li><a href="#walk">What he checks</a></li>
+          <li><a href="sample-report.html">Read a sample report</a></li>
+          <li><a href="#how">How a booking runs</a></li>
+          <li><a href="#contact">Book an inspection</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0400000000">0400 000 000</a></li>
+          <li><a href="mailto:hello@hartley.example">hello@hartley.example</a></li>
+          <li>Seven days · 7am – 8pm</li>
+          <li>Adelaide SA · BLD LIC 000000</li>
+        </ul>
+      </div>
     </div>
-    <p class="disc">Hartley Home &amp; Pest Inspections is a fictional business created by Valkyra Labs to demonstrate homepage layout and content structure for pre-purchase inspection operators. The inspector's name, licence number, phone number, email address, reviews and credentials are placeholder data and do not describe a real business or a real person. All photography is licensed stock imagery used for layout demonstration; the people shown are models and are not staff, and the properties shown have not been inspected by anyone. The sample report extract is illustrative. Nothing here is a quote or an offer.</p>
+    <div class="f-bottom">
+      <div>&copy; 2026 Hartley Home &amp; Pest Inspections</div>
+      <div>Fictional business · reference concept by Valkyra Labs · stock photography</div>
+    </div>
   </div>
 </footer>
 
