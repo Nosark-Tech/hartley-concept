@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sample inspection report — Bezemer Home &amp; Pest Inspections — Concept</title>
+<meta name="description" content="A full sample pre-purchase building and pest inspection report, address removed. Concept page by Valkyra Labs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bluestone:#171C21;--limestone:#F1EEE8;--limestone-2:#E2DDD3;--paper:#FFFFFF;
+  --oxide:#A8482A;--ochre:#D99A2B;--slate:#5F6871;--ok:#2E6B4F;
+  --display:'Archivo',system-ui,sans-serif;--body:'Source Sans 3',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;--rule:1px solid var(--limestone-2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--limestone);color:var(--bluestone);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:940px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;line-height:1.06}
+
+.bar{position:sticky;top:0;z-index:50;background:var(--bluestone);color:var(--limestone)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
+.back{font-family:var(--display);font-weight:700;font-size:15px;text-decoration:none}
+.back span{color:var(--ochre);margin-right:8px}
+.bar-call{font-family:var(--mono);font-weight:700;font-size:15px;background:var(--ochre);color:var(--bluestone);padding:11px 17px;border-radius:2px;text-decoration:none;white-space:nowrap}
+
+.masthead{background:var(--bluestone);color:var(--limestone);padding:60px 0 66px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--ochre);margin-bottom:22px}
+h1{font-weight:800;font-size:clamp(34px,5.4vw,56px);max-width:17ch}
+.masthead p{margin-top:20px;color:#C6CBD1;max-width:56ch}
+
+/* document */
+.doc{background:var(--paper);margin:-34px auto 0;box-shadow:0 26px 60px rgba(0,0,0,.18);border-radius:3px;overflow:hidden}
+.doc-head{border-bottom:3px solid var(--bluestone);padding:26px 34px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-end}
+.doc-head strong{font-family:var(--display);font-weight:800;font-size:20px;display:block}
+.doc-head .meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--slate);line-height:2}
+.block{padding:30px 34px;border-bottom:var(--rule)}
+.block:last-child{border-bottom:0}
+.block h2{font-size:20px;font-weight:700;margin-bottom:6px}
+.block .lead{color:var(--slate);font-size:15.5px;margin-bottom:20px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.kv div span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.13em;color:var(--slate);margin-bottom:5px}
+.kv div b{font-family:var(--display);font-weight:700;font-size:16px}
+
+.tally{display:flex;gap:2px;background:var(--limestone-2);border-radius:2px;overflow:hidden;margin-bottom:22px}
+.tally div{background:var(--paper);padding:16px 18px;flex:1}
+.tally b{font-family:var(--mono);font-weight:700;font-size:26px;display:block}
+.tally span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--slate)}
+.tally .major b{color:var(--oxide)}
+
+.entry{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:var(--rule)}
+.entry:last-child{border-bottom:0}
+@media(max-width:640px){.entry{grid-template-columns:1fr;gap:14px}}
+.shot{width:100%;aspect-ratio:4/3;border-radius:2px;border:1px solid var(--limestone-2);position:relative;overflow:hidden;background:
+  repeating-linear-gradient(135deg,var(--limestone-2) 0 8px,var(--limestone) 8px 16px)}
+.shot span{position:absolute;inset:auto 0 0 0;background:var(--bluestone);color:var(--limestone);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-align:center;padding:4px 0}
+.entry h3{font-size:18px;font-weight:700}
+.entry .ref{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--slate);margin-bottom:6px}
+.pill{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:4px 9px;border-radius:2px;margin-left:10px;vertical-align:middle}
+.pill.major{background:#F5E2DB;color:var(--oxide)}
+.pill.minor{background:var(--limestone-2);color:var(--slate)}
+.entry dl{margin-top:14px;display:grid;grid-template-columns:auto 1fr;gap:7px 16px;font-size:15.5px}
+.entry dt{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--slate);padding-top:5px}
+.limits li{margin-left:20px;padding:6px 0;font-size:15.5px}
+.terms{background:var(--limestone);padding:26px 34px;font-size:14.5px;color:#3C444B}
+.terms b{font-family:var(--display)}
+
+.cta{background:var(--bluestone);color:var(--limestone);padding:70px 0;margin-top:60px}
+.cta h2{font-weight:800;font-size:clamp(27px,4.2vw,40px);max-width:18ch}
+.phone{display:inline-block;font-family:var(--mono);font-weight:700;font-size:clamp(28px,6vw,48px);color:var(--ochre);text-decoration:none;margin-top:24px}
+.cta .hours{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:#949CA4;margin-top:10px}
+footer{background:#0F1417;color:#79828A;padding:34px 0;font-size:13px}
+.disclaimer{margin-top:18px;padding-top:16px;border-top:1px solid rgba(241,238,232,.09);font-size:12.5px;line-height:1.6;max-width:76ch}
+.tag{position:fixed;left:14px;bottom:14px;z-index:60;background:var(--oxide);color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;padding:7px 11px;border-radius:2px}
+@media(max-width:640px){.tag{display:none}}
+@media print{.bar,.tag,.cta{display:none}body{background:#fff}.doc{box-shadow:none;margin:0}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <a class="back" href="index.html"><span>&larr;</span>Bezemer Home &amp; Pest</a>
+    <a class="bar-call" href="tel:+61402105177">0402 105 177</a>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">SAMPLE REPORT · ADDRESS AND OWNER DETAILS REMOVED</p>
+    <h1>This is what lands in your inbox.</h1>
+    <p>A pre-purchase building and pest report on a 1954 double brick home in Adelaide's inner south. Read it before you book, not after you've paid.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="doc">
+    <div class="doc-head">
+      <div>
+        <strong>Pre-Purchase Building &amp; Timber Pest Report</strong>
+        <span class="meta">BEZEMER HOME &amp; PEST INSPECTIONS · BLD LIC R37257</span>
+      </div>
+      <div class="meta">
+        REPORT No. 2024-0418<br>
+        INSPECTED BY ROBERT BEZEMER<br>
+        AS 4349.1 &amp; AS 4349.3
+      </div>
+    </div>
+
+    <section class="block">
+      <h2>The property</h2>
+      <p class="lead">Recorded on the day, so you can check the report matches the house you're buying.</p>
+      <div class="kv">
+        <div><span>PROPERTY TYPE</span><b>Detached, double brick</b></div>
+        <div><span>APPROX. YEAR BUILT</span><b>1954</b></div>
+        <div><span>ROOF</span><b>Terracotta tile</b></div>
+        <div><span>WEATHER ON THE DAY</span><b>Dry, 19°C</b></div>
+        <div><span>OCCUPIED</span><b>Yes, furnished</b></div>
+        <div><span>TIME ON SITE</span><b>2 hours 40 minutes</b></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>What it comes to</h2>
+      <p class="lead">The summary page. If you read nothing else, read this one.</p>
+      <div class="tally">
+        <div class="major"><b>3</b><span>MAJOR DEFECTS</span></div>
+        <div><b>11</b><span>MINOR DEFECTS</span></div>
+        <div><b>2</b><span>SAFETY HAZARDS</span></div>
+        <div><b>1</b><span>TIMBER PEST FINDING</span></div>
+      </div>
+      <p>Two of the three major defects are moisture related and connected: stormwater is discharging against the south footing, and the salt damp above it is the result. Fixed in the right order, that's one trade, not two. The termite workings in the subfloor are inactive, but the conditions that attracted them are the same conditions. None of this makes the house a poor buy. It makes it a house with a drainage problem you should price before you sign.</p>
+    </section>
+
+    <section class="block">
+      <h2>Major defects</h2>
+      <p class="lead">Each one photographed, located, and described in the words you'd use to get a quote.</p>
+
+      <div class="entry">
+        <div class="shot"><span>PHOTO 4.2 · SOUTH ELEVATION</span></div>
+        <div>
+          <p class="ref">REF 4.2 · EXTERNAL WALLS</p>
+          <h3>Salt damp to south wall<span class="pill major">MAJOR</span></h3>
+          <dl>
+            <dt>WHERE</dt><dd>South elevation, between the laundry window and the south-east corner.</dd>
+            <dt>WHAT I FOUND</dt><dd>Rising moisture to 900mm above ground level. Render blown across 3.4 metres, mortar friable to finger pressure, salt crystallisation on the brick face.</dd>
+            <dt>WHY IT MATTERS</dt><dd>The damp proof course is either breached or was never installed at this section. Left alone it keeps climbing and takes the render and the mortar with it.</dd>
+            <dt>WHAT NEXT</dt><dd>Quote from a licensed salt damp contractor before settlement. Fix the stormwater at 4.3 first or you will be paying for this twice.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="shot"><span>PHOTO 4.3 · NE CORNER</span></div>
+        <div>
+          <p class="ref">REF 4.3 · SITE DRAINAGE</p>
+          <h3>Stormwater discharging to footing<span class="pill major">MAJOR</span></h3>
+          <dl>
+            <dt>WHERE</dt><dd>North-east corner, downpipe from the rear gutter run.</dd>
+            <dt>WHAT I FOUND</dt><dd>Downpipe unconnected to the stormwater line, discharging directly onto soil hard against the footing. Active scour channel, approximately 120mm deep.</dd>
+            <dt>WHY IT MATTERS</dt><dd>Every storm sends roof water into the ground beside the footing. It's the cheapest defect in this report and the cause of the most expensive one.</dd>
+            <dt>WHAT NEXT</dt><dd>Connect to the existing stormwater line and reinstate the fall away from the building. Half a day for a plumber.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="shot"><span>PHOTO 5.1 · SUBFLOOR</span></div>
+        <div>
+          <p class="ref">REF 5.1 · TIMBER PESTS (AS 4349.3)</p>
+          <h3>Termite workings, subfloor<span class="pill major">MAJOR</span></h3>
+          <dl>
+            <dt>WHERE</dt><dd>Subfloor, bearer above pier 4, mid-span on the southern run.</dd>
+            <dt>WHAT I FOUND</dt><dd>Mud leads to the bearer, no live termites present at the time of inspection. Timber sounds hollow across roughly 400mm. Subfloor ventilation restricted on the south side.</dd>
+            <dt>WHY IT MATTERS</dt><dd>Inactive today is not the same as safe. The damp, poorly ventilated subfloor is exactly what brought them in, and it hasn't changed.</dd>
+            <dt>WHAT NEXT</dt><dd>Timber pest management plan from a licensed pest controller, plus additional subfloor vents. Structural assessment of the bearer if the hollow section extends further than sounded.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>What I could not inspect</h2>
+      <p class="lead">Named plainly, because the gaps in a report matter as much as the findings.</p>
+      <ul class="limits">
+        <li>Inside wall cavities, under floor coverings, and behind stored goods in the garage.</li>
+        <li>The roof void above the rear extension: access hatch is sealed by the ceiling lining.</li>
+        <li>Approximately 2 square metres of subfloor beneath the bathroom, insufficient clearance.</li>
+        <li>Anything covered by the tenant's furniture at the time of inspection.</li>
+      </ul>
+    </section>
+
+    <div class="terms">
+      <p><b>How this report is written.</b> Carried out to Australian Standard AS 4349.1 for building and AS 4349.3 for timber pests. It is a visual inspection of the readily accessible areas listed above, not a structural engineering assessment and not a certificate of compliance. Defects are rated major where they affect the structure, safety or habitability of the building, and minor where they do not. If any part of this report is unclear, ring Robert on 0402 105 177 and he'll talk you through it.</p>
+    </div>
+  </article>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Ring Robert and book yours.</h2>
+    <a class="phone" href="tel:+61402105177">0402 105 177</a>
+    <p class="hours">7AM – 8PM, SEVEN DAYS · ADELAIDE &amp; SURROUNDS</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Bezemer Home &amp; Pest Inspections · Adelaide, South Australia · BLD LIC R37257</div>
+    <p class="disclaimer">This page is an unsolicited design concept prepared by Valkyra Labs. It is not affiliated with, endorsed by, or operated by Bezemer Home &amp; Pest Inspections. The report contents on this page are written to demonstrate layout and are not a real inspection of a real property; no address, client or finding here refers to an actual job. Photograph slots are deliberately blank because this concept does not invent inspection photographs. Business name, phone number and licence number were taken from the live website at home-inspection.com.au.</p>
+  </div>
+</footer>
+
+<div class="tag">CONCEPT · VALKYRA LABS</div>
+
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bezemer Home &amp; Pest Inspections — Adelaide building and pest inspections — Concept</title>
+<meta name="description" content="Pre-purchase building and pest inspections across Adelaide. Fixed prices, report the same evening, inspected by Robert Bezemer. Concept page by Valkyra Labs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bluestone:#171C21;
+  --bluestone-2:#232C33;
+  --limestone:#F1EEE8;
+  --limestone-2:#E2DDD3;
+  --paper:#FFFFFF;
+  --oxide:#A8482A;
+  --ochre:#D99A2B;
+  --ochre-lift:#E8AC42;
+  --slate:#5F6871;
+  --ok:#2E6B4F;
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Source Sans 3',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --rule:1px solid var(--limestone-2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:var(--body);background:var(--limestone);color:var(--bluestone);font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ochre);color:var(--bluestone);padding:12px 18px;font-family:var(--display);font-weight:700;z-index:99}
+.skip:focus{left:12px;top:12px}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;line-height:1.04}
+
+/* ---------- sticky call bar ---------- */
+.bar{position:sticky;top:0;z-index:50;background:var(--bluestone);color:var(--limestone);border-bottom:1px solid rgba(241,238,232,.14)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.mark{font-family:var(--display);font-weight:800;font-size:17px;line-height:1.1}
+.mark span{display:block;font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.14em;color:var(--ochre);margin-top:4px}
+.bar-actions{display:flex;align-items:center;gap:10px}
+.bar-hours{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#9AA2AA}
+@media(max-width:720px){.bar-hours{display:none}}
+.bar-call{font-family:var(--mono);font-weight:700;font-size:15px;background:var(--ochre);color:var(--bluestone);padding:12px 18px;border-radius:2px;text-decoration:none;white-space:nowrap}
+.bar-call:hover{background:var(--ochre-lift)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--bluestone);color:var(--limestone);padding:70px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:start}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:38px}}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--ochre);margin-bottom:26px}
+h1{font-weight:800;font-size:clamp(40px,5.6vw,64px);max-width:15ch}
+h1 em{font-style:normal;color:var(--ochre)}
+.lede{margin-top:24px;font-size:clamp(17px,2.1vw,20px);max-width:48ch;color:#C6CBD1}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:17px;padding:17px 27px;border-radius:2px;text-decoration:none}
+.btn-primary{background:var(--ochre);color:var(--bluestone)}
+.btn-primary:hover{background:var(--ochre-lift)}
+.btn-primary span{font-family:var(--mono);display:block;font-size:11px;font-weight:400;letter-spacing:.12em;opacity:.74;margin-top:3px}
+.btn-ghost{border:1px solid rgba(241,238,232,.34);color:var(--limestone);padding:17px 27px}
+.btn-ghost:hover{border-color:var(--ochre);color:var(--ochre)}
+.promise{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 30px;font-size:16px;color:#C6CBD1}
+.promise div{display:flex;gap:9px;align-items:baseline}
+.promise b{color:var(--limestone);font-weight:600}
+.promise i{font-style:normal;color:var(--ochre);font-family:var(--mono);font-size:13px}
+.creds{margin-top:48px;border-top:1px solid rgba(241,238,232,.14);padding:20px 0 30px;display:flex;flex-wrap:wrap;gap:10px 38px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:#949CA4}
+.creds b{color:var(--limestone);font-weight:400}
+
+/* ---------- report sheet ---------- */
+.sheet{background:var(--paper);color:var(--bluestone);border-radius:3px;padding:20px 22px;box-shadow:0 22px 48px rgba(0,0,0,.34)}
+.sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:2px solid var(--bluestone);padding-bottom:11px}
+.sheet-head strong{font-family:var(--display);font-size:15px}
+.sheet-head span{font-family:var(--mono);font-size:10px;letter-spacing:.11em;color:var(--slate)}
+table.defects{width:100%;border-collapse:collapse;text-align:left}
+table.defects caption{position:absolute;left:-9999px}
+table.defects th{font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.13em;color:var(--slate);padding:10px 14px 8px 0;border-bottom:var(--rule);white-space:nowrap}
+table.defects th:last-child{padding-right:0;text-align:right}
+table.defects td{padding:12px 0;border-bottom:var(--rule);vertical-align:top}
+table.defects tr:last-child td{border-bottom:0}
+.ref{font-family:var(--mono);font-size:11.5px;color:var(--slate);padding-right:12px;white-space:nowrap}
+.what{font-size:15px;line-height:1.4;padding-right:12px}
+.what em{display:block;font-style:normal;font-size:13px;color:var(--slate);margin-top:4px}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:4px 8px;border-radius:2px;white-space:nowrap}
+.pill.major{background:#F5E2DB;color:var(--oxide)}
+.pill.minor{background:var(--limestone-2);color:var(--slate)}
+/* Photo slots are deliberately blank: these are the client's photographs, and a
+   concept has no business inventing evidence of defects it never inspected. */
+.shot{width:74px;height:56px;border-radius:2px;background:
+  repeating-linear-gradient(135deg,var(--limestone-2) 0 7px,var(--limestone) 7px 14px);
+  border:1px solid var(--limestone-2);position:relative;overflow:hidden}
+.shot span{position:absolute;inset:auto 0 0 0;background:var(--bluestone);color:var(--limestone);
+  font-family:var(--mono);font-size:7.5px;letter-spacing:.08em;text-align:center;padding:2px 0}
+.sheet-foot{margin-top:14px;padding-top:12px;border-top:2px solid var(--bluestone);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.sheet-foot em{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--slate)}
+.sheet-foot a{font-family:var(--display);font-weight:700;font-size:14.5px;color:var(--oxide);text-decoration:none;border-bottom:2px solid var(--ochre);padding-bottom:2px}
+.sheet-foot a:hover{color:var(--bluestone)}
+
+/* ---------- reviews ---------- */
+.reviews{background:var(--bluestone-2);color:var(--limestone);padding:64px 0}
+.reviews h2{font-weight:700;font-size:clamp(24px,3.5vw,33px)}
+.reviews .sub{color:#AEB5BC;margin-top:14px;max-width:58ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px}
+.card{border:1px dashed rgba(241,238,232,.3);border-radius:3px;padding:20px}
+.stars{color:var(--ochre);font-size:15px;letter-spacing:3px}
+.redact{margin-top:14px}
+.redact i{display:block;height:9px;border-radius:2px;background:rgba(241,238,232,.16);margin-bottom:8px}
+.redact i:nth-child(2){width:88%}
+.redact i:nth-child(3){width:64%}
+.card .who-line{margin-top:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;color:#8E969E}
+.reviews .note-line{margin-top:26px;font-size:15.5px;color:#AEB5BC;max-width:66ch}
+.reviews .note-line b{color:var(--limestone);font-weight:600}
+
+/* ---------- sections ---------- */
+section.pad{padding:78px 0}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--oxide);margin-bottom:14px}
+h2.big{font-weight:800;font-size:clamp(31px,4.6vw,46px);max-width:19ch}
+.intro{margin-top:16px;max-width:56ch;color:#3C444B;font-size:18px}
+
+/* ---------- prices ---------- */
+.docket{margin-top:44px;background:var(--paper);border:var(--rule);border-radius:3px;overflow:hidden}
+.docket-top{background:var(--bluestone);color:var(--limestone);padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.docket-top strong{font-family:var(--display);font-weight:700;font-size:15px}
+.docket-top span{font-family:var(--mono);font-size:11px;letter-spacing:.13em;color:var(--ochre)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 26px;border-bottom:var(--rule)}
+.row:last-child{border-bottom:0}
+.row.pick{background:#FBF7EF;box-shadow:inset 3px 0 0 var(--ochre)}
+.svc{font-family:var(--display);font-weight:700;font-size:16.5px}
+.svc .tag{font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.1em;color:var(--oxide);margin-left:10px}
+.note{display:block;font-family:var(--body);font-weight:400;font-size:14.5px;color:var(--slate);margin-top:6px;max-width:54ch;letter-spacing:0}
+.amt{font-family:var(--mono);font-weight:700;font-size:21px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.docket-foot{padding:18px 26px;background:var(--limestone);border-top:var(--rule);font-size:15.5px;color:#3C444B}
+
+/* ---------- inclusions ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;background:var(--limestone-2)}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.col{background:var(--limestone);padding:28px 26px}
+.col h3{font-weight:700;font-size:18px;margin-bottom:16px}
+.col ul{list-style:none}
+.col li{padding:9px 0 9px 26px;border-bottom:var(--rule);position:relative;font-size:16px}
+.col li:last-child{border-bottom:0}
+.col.in li::before{content:"";position:absolute;left:2px;top:16px;width:11px;height:6px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(-45deg)}
+.col.out li::before{content:"";position:absolute;left:2px;top:19px;width:11px;height:2px;background:var(--oxide)}
+
+/* ---------- defect inventory ---------- */
+.inventory{background:var(--bluestone-2);color:var(--limestone);padding:64px 0 70px}
+.inv-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+.inv-head h2{font-weight:700;font-size:clamp(24px,3.4vw,32px)}
+.inv-head .n{font-family:var(--mono);font-size:12px;color:var(--ochre);letter-spacing:.12em}
+.inv-sub{color:#AEB5BC;max-width:58ch;margin-bottom:32px}
+.inv-list{columns:3;column-gap:44px;font-family:var(--display);font-weight:500;font-size:15.5px}
+.inv-list div{break-inside:avoid;padding:9px 0 9px 22px;border-bottom:1px solid rgba(241,238,232,.1);position:relative;line-height:1.35}
+.inv-list div::before{content:"";position:absolute;left:0;top:15px;width:9px;height:2px;background:var(--oxide)}
+@media(max-width:880px){.inv-list{columns:2;column-gap:30px}}
+@media(max-width:540px){.inv-list{columns:1}}
+
+/* ---------- how it runs ---------- */
+.steps{counter-reset:step;margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px;background:var(--limestone-2)}
+.step{background:var(--limestone);padding:26px 24px}
+.step h3{font-weight:700;font-size:17.5px;margin:12px 0 8px}
+.step p{font-size:15.5px;color:#3C444B}
+.step .num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--oxide)}
+
+/* ---------- who ---------- */
+.who{background:var(--paper);padding:74px 0}
+.who-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px}
+@media(max-width:860px){.who-grid{grid-template-columns:1fr;gap:28px}}
+.who blockquote{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.02em;line-height:1.3}
+.who cite{display:block;margin-top:18px;font-family:var(--mono);font-style:normal;font-size:11.5px;letter-spacing:.12em;color:var(--slate)}
+.who p{margin-bottom:16px;color:#3C444B}
+
+/* ---------- contact ---------- */
+.contact{background:var(--bluestone);color:var(--limestone);padding:80px 0}
+.contact h2{font-weight:800;font-size:clamp(29px,4.4vw,44px);max-width:18ch}
+.phone{display:inline-block;font-family:var(--mono);font-weight:700;font-size:clamp(30px,6.2vw,53px);color:var(--ochre);text-decoration:none;margin-top:28px;letter-spacing:-.02em}
+.phone:hover{text-decoration:underline;text-underline-offset:8px}
+.hours{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:#949CA4;margin-top:10px}
+.mail{margin-top:26px;color:#C6CBD1}
+.mail a{color:var(--limestone)}
+
+/* ---------- footer ---------- */
+footer{background:#0F1417;color:#79828A;padding:36px 0;font-size:13.5px}
+.fwrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.disclaimer{margin-top:20px;padding-top:18px;border-top:1px solid rgba(241,238,232,.09);font-size:12.5px;line-height:1.6;max-width:76ch}
+.tag{position:fixed;left:14px;bottom:14px;z-index:60;background:var(--oxide);color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;padding:7px 11px;border-radius:2px}
+@media(max-width:640px){.tag{display:none}}
+@media print{.bar,.tag,.contact,.actions{display:none}body{background:#fff;font-size:12pt}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="mark">Bezemer Home &amp; Pest<span>BLD LIC R37257 · ADELAIDE SA</span></div>
+    <div class="bar-actions">
+      <span class="bar-hours">7AM – 8PM, 7 DAYS</span>
+      <a class="bar-call" href="tel:+61402105177">0402 105 177</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+   <div class="hero-grid">
+    <div>
+      <p class="eyebrow">PRE-PURCHASE BUILDING &amp; PEST · SOUTH AUSTRALIA</p>
+      <h1>Know what you're buying <em>before</em> you sign.</h1>
+      <p class="lede">Robert Bezemer has spent 40 years building in South Australia. He inspects the house himself, and rings you the same day to tell you plainly what he found.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+61402105177">Ring or text Robert<span>0402 105 177 · 7 DAYS</span></a>
+        <a class="btn btn-ghost" href="#prices">See every price</a>
+      </div>
+      <div class="promise">
+        <div><i>01</i><span><b>Report the same evening</b> you're inspected</span></div>
+        <div><i>02</i><span><b>Fixed prices</b>, published, no quote form</span></div>
+        <div><i>03</i><span><b>Robert does the inspection</b>, not a subcontractor</span></div>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet-head"><strong>Defects — page 6 of 41</strong><span>SAMPLE · ADDRESS REMOVED</span></div>
+      <table class="defects">
+        <caption>Extract from a sample inspection report</caption>
+        <thead>
+          <tr><th scope="col">Ref</th><th scope="col">Photo</th><th scope="col">Defect</th><th scope="col">Rating</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ref">4.2</td>
+            <td><div class="shot"><span>PHOTO 4.2</span></div></td>
+            <td class="what">Salt damp to south wall<em>Rising moisture 900mm above ground level, render blown across 3.4m</em></td>
+            <td><span class="pill major">MAJOR</span></td>
+          </tr>
+          <tr>
+            <td class="ref">4.3</td>
+            <td><div class="shot"><span>PHOTO 4.3</span></div></td>
+            <td class="what">Stormwater discharging to footing<em>Downpipe unconnected at north-east corner, active scour</em></td>
+            <td><span class="pill major">MAJOR</span></td>
+          </tr>
+          <tr>
+            <td class="ref">5.1</td>
+            <td><div class="shot"><span>PHOTO 5.1</span></div></td>
+            <td class="what">Termite workings, subfloor<em>Inactive mudding to bearer, sounding hollow at pier 4</em></td>
+            <td><span class="pill major">MAJOR</span></td>
+          </tr>
+          <tr>
+            <td class="ref">6.7</td>
+            <td><div class="shot"><span>PHOTO 6.7</span></div></td>
+            <td class="what">Non-compliant downlights<em>Insulation packed against 6 fittings in roof void</em></td>
+            <td><span class="pill minor">MINOR</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="sheet-foot">
+        <em>PHOTOGRAPHED · LOCATED · RATED</em>
+        <a href="sample-report.html">Read the full sample report</a>
+      </div>
+    </div>
+   </div>
+
+    <div class="creds">
+      <div>BUILDING LICENCE <b>R37257</b></div>
+      <div>MEMBER <b>MASTER BUILDERS SA</b></div>
+      <div>REGISTERED <b>MASTER INSPECTOR</b></div>
+      <div>INSPECTED TO <b>AS 4349.1 &amp; AS 4349.3</b></div>
+      <div>FULLY <b>LICENSED &amp; INSURED</b></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="reviews">
+  <div class="wrap">
+    <h2>What clients say.</h2>
+    <p class="sub">Robert has no Google listing yet, so there is nothing here to quote. These are the slots, and they fill with real reviews the week the listing goes live.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="stars" aria-label="Five star review placeholder">★★★★★</div>
+        <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="who-line">GOOGLE REVIEW · AWAITING LISTING</p>
+      </div>
+      <div class="card">
+        <div class="stars" aria-label="Five star review placeholder">★★★★★</div>
+        <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="who-line">GOOGLE REVIEW · AWAITING LISTING</p>
+      </div>
+      <div class="card">
+        <div class="stars" aria-label="Five star review placeholder">★★★★★</div>
+        <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="who-line">GOOGLE REVIEW · AWAITING LISTING</p>
+      </div>
+    </div>
+    <p class="note-line">Six Adelaide inspection businesses rank above this one on Google. They hold between <b>94 and 473 reviews</b> each. Every one of Robert's clients has already had the phone call where he explains the report; the ask that turns those calls into reviews is a single text message afterwards.</p>
+  </div>
+</section>
+
+<section class="pad" id="prices">
+  <div class="wrap">
+    <p class="kicker">PRICES</p>
+    <h2 class="big">Every price, up front.</h2>
+    <p class="intro">No quote form and no callback to find out what it costs. This is the price you pay for a standard Adelaide home.</p>
+
+    <div class="docket">
+      <div class="docket-top"><strong>Bezemer Home &amp; Pest Inspections</strong><span>ADELAIDE &amp; SURROUNDS</span></div>
+
+      <div class="row pick">
+        <span class="svc">Pre-purchase building and pest inspection<span class="tag">MOST BOOKED</span>
+          <span class="note">The one to book before your cooling-off period ends. Structure, timber pests and the full defect list in a single report.</span>
+        </span>
+        <span class="amt">$600</span>
+      </div>
+      <div class="row">
+        <span class="svc">Pre-purchase building inspection only</span>
+        <span class="amt">$500</span>
+      </div>
+      <div class="row">
+        <span class="svc">Pest inspection only</span>
+        <span class="amt">$350</span>
+      </div>
+      <div class="row">
+        <span class="svc">House with granny flat or farmhouse — building and pest</span>
+        <span class="amt">$700</span>
+      </div>
+      <div class="row">
+        <span class="svc">New build handover inspection
+          <span class="note">Three inspections included: wall frame stage, lock-up stage, and handover of your new home.</span>
+        </span>
+        <span class="amt">$500</span>
+      </div>
+      <div class="row">
+        <span class="svc">Singular defect report
+          <span class="note">A report on one defect, written to be given to Consumer Affairs or used in a court of law.</span>
+        </span>
+        <span class="amt">$500</span>
+      </div>
+      <div class="docket-foot">Prices include GST and travel across metropolitan Adelaide. Rural South Australia by arrangement, quoted before you commit.</div>
+    </div>
+
+    <div class="two">
+      <div class="col in">
+        <h3>What the price covers</h3>
+        <ul>
+          <li>Robert on site, not a franchisee</li>
+          <li>Roof exterior, roof void and subfloor where accessible</li>
+          <li>Timber pest inspection to AS 4349.3</li>
+          <li>Photographs of every defect raised</li>
+          <li>Report emailed the same evening</li>
+          <li>A phone call to walk you through it</li>
+        </ul>
+      </div>
+      <div class="col out">
+        <h3>What it doesn't cover</h3>
+        <ul>
+          <li>Areas that can't be safely accessed on the day</li>
+          <li>Anything concealed behind wall linings</li>
+          <li>Swimming pool compliance certification</li>
+          <li>Asbestos sampling or laboratory testing</li>
+          <li>Repair work — Robert doesn't quote on what he finds</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inventory">
+  <div class="wrap">
+    <div class="inv-head">
+      <h2>What Robert is looking for</h2>
+      <p class="n">MAJOR &amp; MINOR DEFECTS</p>
+    </div>
+    <p class="inv-sub">Every report covers identified major and minor defects and faults, including:</p>
+    <div class="inv-list">
+      <div>Brick and mortar deterioration</div>
+      <div>Subsiding foundations</div>
+      <div>Salt damp</div>
+      <div>Drainage and stormwater</div>
+      <div>Structural elements</div>
+      <div>Leaking roofs</div>
+      <div>Leaking gutters</div>
+      <div>Timber framing and roof faults</div>
+      <div>Active water leaks</div>
+      <div>Subfloor ventilation</div>
+      <div>Leaking hot water service</div>
+      <div>Damp proof course</div>
+      <div>Non-compliant downlights</div>
+      <div>Fire hazards</div>
+      <div>Tree root damage</div>
+      <div>Unlevel flooring</div>
+      <div>Bouncy floors</div>
+      <div>Structural cracks</div>
+      <div>Termite and timber borer damage</div>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <p class="kicker">HOW IT RUNS</p>
+    <h2 class="big">Booked this morning, read tonight.</h2>
+    <div class="steps">
+      <div class="step">
+        <p class="num">STEP 01</p>
+        <h3>Ring or text Robert</h3>
+        <p>Tell him the address and when your cooling-off period ends. He'll tell you straight away whether he can be there in time.</p>
+      </div>
+      <div class="step">
+        <p class="num">STEP 02</p>
+        <h3>He inspects the house</h3>
+        <p>Roof exterior, roof void, subfloor, interior, exterior, garage, retaining walls, drainage and fencing. Usually two to three hours.</p>
+      </div>
+      <div class="step">
+        <p class="num">STEP 03</p>
+        <h3>Report the same evening</h3>
+        <p>Photographed, located and rated major or minor, so you can see what's a settlement problem and what isn't.</p>
+      </div>
+      <div class="step">
+        <p class="num">STEP 04</p>
+        <h3>He rings you to explain it</h3>
+        <p>Forty years of building in South Australia, on the phone, telling you what he'd do if it were his money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap who-grid">
+    <div>
+      <blockquote>“I've built houses in this state for forty years. I inspect them the same way I built them, and I tell you what I'd do if it were my money.”</blockquote>
+      <cite>ROBERT BEZEMER · BLD LIC R37257</cite>
+    </div>
+    <div>
+      <p>Robert started on the tools in South Australia in the mid-1980s and has spent four decades building, supervising and repairing homes across Adelaide. That's the reason the reports read the way they do: he's fixed most of what he finds.</p>
+      <p>He inspects every property himself. There's no roster of subcontractors and no franchise office between you and the person who walked the roof void. If something in the report isn't clear, the number you ring is his.</p>
+      <p>Inspections are carried out to Australian Standards AS 4349.1 for building and AS 4349.3 for timber pests, and Bezemer Home &amp; Pest Inspections carries current professional indemnity and public liability insurance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2>Ring or text Robert. Seven days.</h2>
+    <a class="phone" href="tel:+61402105177">0402 105 177</a>
+    <p class="hours">7AM – 8PM, SEVEN DAYS · ADELAIDE &amp; SURROUNDS</p>
+    <p class="mail">Or email <a href="mailto:bez@home-inspection.com.au">bez@home-inspection.com.au</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fwrap">
+      <div>Bezemer Home &amp; Pest Inspections · Adelaide, South Australia</div>
+      <div style="font-family:var(--mono);font-size:12px">BLD LIC R37257</div>
+    </div>
+    <p class="disclaimer">This page is an unsolicited design concept prepared by Valkyra Labs. It is not affiliated with, endorsed by, or operated by Bezemer Home &amp; Pest Inspections. Business details, prices, licence number and the defect list were taken from the live website at home-inspection.com.au; prices are reproduced as listed with decimal formatting corrected. The sample report extract, trading hours, turnaround time and inclusions are illustrative and are not statements by the business. Photograph slots and review slots are deliberately blank: this concept does not invent inspection photographs or client reviews. Nothing here should be relied on as a quote or an offer.</p>
+  </div>
+</footer>
+
+<div class="tag">CONCEPT · VALKYRA LABS</div>
+
+</body>
+</html>
