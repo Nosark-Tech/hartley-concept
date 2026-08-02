@@ -536,12 +536,24 @@ footer{background:#EFEADF;border-top:1px solid var(--line);padding:clamp(3rem,6v
         setTimeout(function(){ li.style.transition = 'opacity .4s ease, transform .4s ease'; li.style.opacity = 1; li.style.transform = 'none'; }, 40 * k); }
       elList.appendChild(li);
     });
-    hots.forEach(function(b, bi){ b.setAttribute('aria-pressed', bi === i ? 'true' : 'false'); });
+    hots.forEach(function(b, bi){
+      b.setAttribute('aria-pressed', bi === i ? 'true' : 'false');
+      b.tabIndex = bi === i ? 0 : -1;
+    });
     var ping = document.querySelector('.hot .ping'); if(ping) ping.remove();
   }
   hots.forEach(function(b, i){
     b.addEventListener('click', function(){ show(i); });
     b.addEventListener('mouseenter', function(){ show(i); });
+    b.addEventListener('keydown', function(e){
+      if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      e.preventDefault();
+      var cur = 0;
+      hots.forEach(function(h, hi){ if(h.getAttribute('aria-pressed') === 'true') cur = hi; });
+      var n = (cur + ((e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : hots.length - 1)) % hots.length;
+      show(n);
+      hots[n].focus();
+    });
   });
   show(0);
   if(!reduce && !hots[0].querySelector('.ping')){
