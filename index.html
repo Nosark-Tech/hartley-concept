@@ -8,177 +8,200 @@
 <meta name="description" content="Pre-purchase building and pest inspections across Adelaide, inspected by Robert Bezemer. Concept page by Valkyra Labs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --stone:#12171B;
-  --stone-2:#1B2228;
-  --stone-3:#2A343C;
-  --lime:#EFEDE7;
-  --lime-2:#D9D4C9;
-  --ochre:#E0A63B;
-  --ochre-2:#F0BC5C;
-  --oxide:#B45430;
-  --slate:#8B949C;
-  --display:'Archivo',system-ui,sans-serif;
-  --body:'Source Sans 3',system-ui,sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --navy:#0A2533;
+  --navy-2:#0C2E3A;
+  --navy-deep:#071820;
+  --ivory:#F6F3ED;
+  --ivory-2:#EFE9DC;
+  --ink:#1A2B33;
+  --ink-soft:#4A5C66;
+  --muted:#7A8A93;
+  --line:rgba(10,37,51,.12);
+  --line-on-dark:rgba(246,243,237,.14);
+  --ochre:#C9A24A;
+  --ochre-soft:#E8D5A3;
+  --teal:#1A9AA6;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --nav-h:72px;
+  --section:clamp(4.5rem,8vw,7rem);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:var(--body);background:var(--stone);color:var(--lime);font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 26px}
-a{color:inherit}
-h1,h2,h3{font-family:var(--display);letter-spacing:-.035em;line-height:1.02}
-:focus-visible{outline:2px solid var(--ochre);outline-offset:4px;border-radius:2px}
-.skip{position:absolute;left:-9999px;background:var(--ochre);color:var(--stone);padding:12px 18px;font-weight:700;z-index:99}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{font-family:var(--sans);background:var(--ivory);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,32px)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,blockquote{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.05}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+.skip{position:absolute;left:-9999px;background:var(--ochre);color:var(--navy);padding:12px 18px;z-index:99;font-weight:700}
 .skip:focus{left:14px;top:14px}
-.mono{font-family:var(--mono)}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre)}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--ochre)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rv{opacity:1;transform:none;transition:none}
-  *{animation:none!important}
 }
 
-/* ---------- nav ---------- */
-.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(18,23,27,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(239,237,231,.1)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:72px}
-.brand{font-family:var(--display);font-weight:800;font-size:17px;line-height:1.05;letter-spacing:-.02em}
-.brand span{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--ochre);margin-top:4px}
-.nav-links{display:flex;gap:28px;font-size:14.5px;color:var(--slate)}
-.nav-links a{text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
-.nav-links a:hover{color:var(--lime);border-bottom-color:var(--ochre)}
-@media(max-width:900px){.nav-links{display:none}}
-.call{font-family:var(--mono);font-weight:700;font-size:14.5px;background:var(--ochre);color:var(--stone);padding:12px 18px;border-radius:2px;text-decoration:none;white-space:nowrap}
-.call:hover{background:var(--ochre-2)}
-@media(max-width:430px){.brand span{display:none}.call{font-size:13px;padding:11px 13px}}
+/* surfaces */
+.surface-navy{
+  background:
+    radial-gradient(ellipse 65% 55% at 8% 100%, rgba(201,162,74,.18), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 0%, rgba(20,60,75,.45), transparent 48%),
+    linear-gradient(165deg, var(--navy) 0%, var(--navy-2) 48%, var(--navy-deep) 100%);
+  color:var(--ivory);
+}
+.surface-ivory{
+  background:
+    radial-gradient(ellipse 85% 55% at 50% -10%, rgba(201,162,74,.1), transparent 58%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(26,154,166,.05), transparent 50%),
+    linear-gradient(180deg, #FAF8F3 0%, var(--ivory) 55%, #EDE7DA 100%);
+  color:var(--ink);
+}
+.surface-paper{background:#FFFEFB;color:var(--ink)}
+.seam{height:28px;background:linear-gradient(180deg,var(--navy-deep),var(--ivory));position:relative}
+.seam::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(180px,40vw);height:1px;background:linear-gradient(90deg,transparent,var(--ochre),transparent)}
+.seam-up{background:linear-gradient(180deg,var(--ivory),var(--navy))}
 
-/* ---------- hero ---------- */
-.hero{padding:146px 0 90px;position:relative}
-.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(680px 380px at 78% 12%,rgba(224,166,59,.13),transparent 70%)}
-.hero .wrap{position:relative;z-index:1}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--ochre);margin-bottom:30px;display:flex;align-items:center;gap:14px}
-.eyebrow::after{content:"";height:1px;flex:1;max-width:190px;background:linear-gradient(90deg,var(--ochre),transparent)}
-h1{font-weight:800;font-size:clamp(44px,8.4vw,104px);max-width:13ch}
-h1 em{font-style:normal;color:var(--ochre)}
-.hero .lede{margin-top:28px;font-size:clamp(18px,2.2vw,22px);max-width:46ch;color:#B9C0C6}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
-.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:17px;padding:17px 28px;border-radius:2px;text-decoration:none}
-.btn-solid{background:var(--ochre);color:var(--stone)}
-.btn-solid:hover{background:var(--ochre-2)}
-.btn-solid span{display:block;font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.12em;opacity:.72;margin-top:3px}
-.btn-line{border:1px solid rgba(239,237,231,.28);color:var(--lime);padding:17px 28px}
-.btn-line:hover{border-color:var(--ochre);color:var(--ochre)}
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;height:var(--nav-h);background:rgba(7,24,32,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-on-dark)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:100%}
+.brand{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ivory);line-height:1.1}
+.brand span{display:block;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.16em;color:rgba(246,243,237,.55);margin-top:3px}
+.nlinks{display:flex;gap:26px;font-size:14px;font-weight:500;color:rgba(246,243,237,.7)}
+.nlinks a:hover{color:var(--ochre-soft)}
+@media(max-width:880px){.nlinks{display:none}}
+.ncall{font-size:14px;font-weight:700;background:var(--ochre);color:var(--navy);padding:11px 18px;border-radius:999px;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.ncall:hover{filter:brightness(1.06)}
 
-.facts{margin-top:74px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border-top:1px solid rgba(239,237,231,.12)}
-.fact{padding:26px 26px 26px 0;border-right:1px solid rgba(239,237,231,.12)}
-.fact:last-child{border-right:0}
-.fact b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(30px,3.6vw,42px);letter-spacing:-.04em;color:var(--lime)}
-.fact span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--slate);margin-top:8px;line-height:1.7}
-@media(max-width:700px){.fact{border-right:0;border-bottom:1px solid rgba(239,237,231,.12);padding-right:0}}
+/* hero */
+.hero{position:relative;padding:calc(var(--nav-h) + clamp(2.4rem,5vw,3.6rem)) 0 0;overflow:hidden;min-height:auto}
+.hero .wrap{position:relative;z-index:1;padding-bottom:clamp(2.5rem,5vw,3.5rem)}
+.hero h1{font-size:clamp(2.35rem,6.2vw,4.4rem);font-weight:500;max-width:14ch;color:var(--ivory);margin-top:22px}
+.hero h1 em{font-style:italic;color:var(--ochre-soft);font-weight:500}
+.lede{margin-top:22px;font-size:clamp(1.05rem,2vw,1.25rem);max-width:46ch;color:rgba(246,243,237,.78);line-height:1.55}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;font-family:var(--sans);font-weight:700;font-size:16px;padding:14px 24px;border-radius:999px;line-height:1.2}
+.btn-primary{background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(0,0,0,.04)),linear-gradient(135deg,#E0B85C,#C9A24A 55%,#A88430);color:var(--navy);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 28px rgba(201,162,74,.28)}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-primary small{font-size:10px;font-weight:600;letter-spacing:.12em;opacity:.75;margin-top:3px}
+.btn-ghost{border:1px solid rgba(246,243,237,.28);color:var(--ivory);background:rgba(246,243,237,.04);backdrop-filter:blur(8px);padding:16px 24px}
+.btn-ghost:hover{border-color:var(--ochre);color:var(--ochre-soft)}
 
-/* ---------- section shell ---------- */
-section{padding:104px 0}
-.kick{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--oxide);margin-bottom:18px}
-h2{font-weight:800;font-size:clamp(32px,5.2vw,58px);max-width:17ch}
-.sub{margin-top:20px;max-width:56ch;color:#A9B1B8;font-size:18px}
+.trust{border-top:1px solid var(--line-on-dark);background:rgba(0,0,0,.18)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.trust-item{padding:26px 20px 26px 0;border-right:1px solid var(--line-on-dark)}
+.trust-item:last-child{border-right:0}
+.trust-item b{display:block;font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:500;color:var(--ivory);letter-spacing:-.03em}
+.trust-item span{display:block;margin-top:8px;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,243,237,.55);line-height:1.55;max-width:18ch}
+@media(max-width:800px){
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust-item{border-right:0;border-bottom:1px solid var(--line-on-dark);padding:20px 12px 20px 0}
+  .trust-item:nth-child(odd){padding-right:16px;border-right:1px solid var(--line-on-dark)}
+  .trust-item:nth-last-child(-n+2){border-bottom:0}
+}
 
-/* ---------- walkthrough ---------- */
-.walk{background:var(--stone-2);border-top:1px solid rgba(239,237,231,.09);border-bottom:1px solid rgba(239,237,231,.09)}
-.walk-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;margin-top:54px;align-items:start}
-@media(max-width:1000px){.walk-grid{grid-template-columns:1fr;gap:34px}}
+/* sections */
+section{padding:var(--section) 0}
+.kick{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.surface-navy .kick{color:var(--ochre)}
+h2{font-size:clamp(2rem,4.4vw,3.35rem);max-width:16ch}
+.sub{margin-top:16px;max-width:52ch;color:var(--ink-soft);font-size:1.05rem}
+.surface-navy .sub{color:rgba(246,243,237,.7)}
 
-.house{position:relative;width:100%;aspect-ratio:8/5.6;background:var(--stone);border:1px solid rgba(239,237,231,.1);border-radius:3px;overflow:hidden}
+/* walkthrough */
+.walk-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;margin-top:42px;align-items:start}
+@media(max-width:960px){.walk-grid{grid-template-columns:1fr;gap:28px}}
+.house{position:relative;width:100%;aspect-ratio:8/5.6;background:rgba(0,0,0,.28);border:1px solid var(--line-on-dark);border-radius:14px;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 .house svg{position:absolute;inset:0;width:100%;height:100%}
-.hot{position:absolute;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;
-  border:1px solid rgba(224,166,59,.55);background:rgba(18,23,27,.72);color:var(--ochre);
-  font-family:var(--mono);font-size:12px;font-weight:700;cursor:pointer;display:grid;place-items:center;
-  transition:transform .22s ease,background .22s ease,border-color .22s ease}
-.hot::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(224,166,59,.28);opacity:0;transition:opacity .22s ease}
-.hot:hover{transform:translate(-50%,-50%) scale(1.12);background:rgba(224,166,59,.18)}
-.hot[aria-pressed="true"]{background:var(--ochre);color:var(--stone);border-color:var(--ochre)}
-.hot[aria-pressed="true"]::after{opacity:1}
-.pulse{animation:pulse 2.6s ease-out infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,166,59,.34)}70%{box-shadow:0 0 0 16px rgba(224,166,59,0)}100%{box-shadow:0 0 0 0 rgba(224,166,59,0)}}
+.hot{position:absolute;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(201,162,74,.7);background:rgba(7,24,32,.85);color:var(--ochre-soft);font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;display:grid;place-items:center;transition:transform .2s var(--ease),background .2s,border-color .2s,box-shadow .2s}
+.hot:hover{transform:translate(-50%,-50%) scale(1.1);background:rgba(201,162,74,.2)}
+.hot[aria-pressed="true"]{background:var(--ochre);color:var(--navy);border-color:var(--ochre);box-shadow:0 0 0 6px rgba(201,162,74,.2)}
+.zone{border-left:2px solid var(--ochre);padding-left:24px}
+@media(max-width:960px){.zone{border-left:0;border-top:2px solid var(--ochre);padding-left:0;padding-top:22px}}
+.zone .z-no{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--ochre)}
+.zone h3{font-size:clamp(1.5rem,2.8vw,2rem);margin-top:8px;color:var(--ivory)}
+.zone .z-check{margin-top:14px;color:rgba(246,243,237,.72)}
+.zone-list{list-style:none;margin-top:16px}
+.zone-list li{padding:10px 0 10px 18px;border-top:1px solid var(--line-on-dark);position:relative;font-size:15px;color:rgba(246,243,237,.82)}
+.zone-list li::before{content:"";position:absolute;left:0;top:20px;width:8px;height:1px;background:var(--ochre)}
+.z-note{margin-top:20px;background:rgba(255,255,255,.05);border:1px solid var(--line-on-dark);border-radius:12px;padding:18px 20px}
+.z-note b{display:block;font-size:10px;letter-spacing:.14em;color:var(--ochre);margin-bottom:8px;font-weight:700}
+.z-note span{color:rgba(246,243,237,.85);font-size:15.5px}
+.hint{margin-top:16px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,243,237,.45)}
 
-.zone-panel{border-left:2px solid var(--ochre);padding-left:28px}
-@media(max-width:1000px){.zone-panel{border-left:0;border-top:2px solid var(--ochre);padding-left:0;padding-top:26px}}
-.zone-panel .z-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--ochre)}
-.zone-panel h3{font-weight:800;font-size:clamp(24px,3vw,33px);margin-top:12px}
-.zone-panel .z-check{margin-top:18px;color:#B9C0C6;font-size:17px}
-.zone-list{list-style:none;margin-top:20px}
-.zone-list li{padding:11px 0 11px 24px;border-top:1px solid rgba(239,237,231,.1);position:relative;font-size:16px;color:#C8CED3}
-.zone-list li::before{content:"";position:absolute;left:0;top:21px;width:11px;height:1px;background:var(--oxide)}
-.z-note{margin-top:24px;background:var(--stone-3);border-radius:3px;padding:20px 22px;font-size:16px;color:#CFD5D9}
-.z-note b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ochre);margin-bottom:9px;font-weight:400}
-.walk-hint{margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.13em;color:var(--slate)}
+/* report band */
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:900px){.report-grid{grid-template-columns:1fr;gap:32px}}
+.stack{position:relative;height:300px}
+.pg{position:absolute;left:0;right:0;background:#fff;color:var(--ink);border-radius:10px;padding:20px 22px;box-shadow:0 18px 40px rgba(10,37,51,.12);border:1px solid var(--line)}
+.pg1{top:0;transform:rotate(-2.5deg) translateX(8px);opacity:.45;height:260px}
+.pg2{top:12px;transform:rotate(1.8deg) translateX(-4px);opacity:.7;height:260px}
+.pg3{top:26px;height:260px;transition:transform .4s var(--ease)}
+.report-grid:hover .pg3{transform:translateY(-6px)}
+.pg-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:4px}
+.pg-head strong{font-family:var(--serif);font-size:16px;font-weight:600}
+.pg-head span{font-size:10px;letter-spacing:.12em;font-weight:700;color:var(--muted)}
+.pg-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #EBE4D6}
+.pg-shot{width:52px;height:40px;flex:none;border:1px solid #EBE4D6;border-radius:4px;background:repeating-linear-gradient(135deg,#EBE4D6 0 6px,#F7F3EA 6px 12px)}
+.pg-txt{font-size:13px;line-height:1.35}
+.pg-txt em{display:block;font-style:normal;font-size:11.5px;color:var(--muted);margin-top:2px}
+.pg-tag{font-size:9px;letter-spacing:.1em;font-weight:700;padding:3px 7px;border-radius:999px;background:#F3E2D8;color:#9A4A2E;flex:none}
+.btn-dark{background:var(--navy);color:var(--ivory);border-radius:999px;padding:15px 24px;font-weight:700;display:inline-block;margin-top:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.btn-dark:hover{background:var(--navy-2)}
+.btn-dark small{display:block;font-size:10px;font-weight:600;letter-spacing:.12em;opacity:.6;margin-top:3px}
 
-/* ---------- report band ---------- */
-.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
-@media(max-width:900px){.report-grid{grid-template-columns:1fr;gap:36px}}
-.stack{position:relative;height:330px}
-.pg{position:absolute;left:0;right:0;background:#fff;color:var(--stone);border-radius:2px;padding:22px 24px;box-shadow:0 20px 44px rgba(0,0,0,.42)}
-.pg1{top:0;transform:rotate(-3deg) translateX(6px);opacity:.5;height:290px}
-.pg2{top:14px;transform:rotate(2deg) translateX(-4px);opacity:.75;height:290px}
-.pg3{top:30px;height:290px;transition:transform .4s ease}
-.report-grid:hover .pg3{transform:translateY(-8px)}
-.pg-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--stone);padding-bottom:10px}
-.pg-head strong{font-family:var(--display);font-size:14.5px}
-.pg-head span{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;color:#6B747C}
-.pg-row{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #E4E0D8}
-.pg-row:last-child{border-bottom:0}
-.pg-shot{width:56px;height:42px;flex:none;border:1px solid #E4E0D8;border-radius:2px;
-  background:repeating-linear-gradient(135deg,#E4E0D8 0 6px,#F4F2ED 6px 12px)}
-.pg-txt{font-size:13.5px;line-height:1.4}
-.pg-txt em{display:block;font-style:normal;font-size:11.5px;color:#6B747C;margin-top:3px}
-.pg-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;padding:3px 7px;border-radius:2px;background:#F0DFD8;color:var(--oxide);flex:none}
+/* steps */
+.steps{margin-top:42px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{background:#FFFEFB;padding:28px 24px}
+.step .n{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--teal)}
+.step h3{font-size:1.25rem;margin:12px 0 8px}
+.step p{font-size:15px;color:var(--ink-soft)}
 
-/* ---------- steps ---------- */
-.steps{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:rgba(239,237,231,.12)}
-.step{background:var(--stone);padding:32px 26px;position:relative}
-.step .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ochre)}
-.step h3{font-weight:700;font-size:20px;margin:14px 0 10px}
-.step p{font-size:16px;color:#A9B1B8}
-
-/* ---------- reviews ---------- */
-.reviews{background:var(--stone-2);border-top:1px solid rgba(239,237,231,.09)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:44px}
-.card{border:1px dashed rgba(239,237,231,.24);border-radius:3px;padding:24px}
-.stars{color:var(--ochre);letter-spacing:3px;font-size:15px}
+/* reviews */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+@media(max-width:800px){.cards{grid-template-columns:1fr}}
+.card{border:1px dashed rgba(10,37,51,.22);border-radius:14px;padding:24px;background:rgba(255,255,255,.55)}
+.stars{color:var(--ochre);letter-spacing:3px;font-size:14px}
 .redact{margin-top:16px}
-.redact i{display:block;height:9px;border-radius:2px;background:rgba(239,237,231,.13);margin-bottom:9px}
+.redact i{display:block;height:9px;border-radius:4px;background:rgba(10,37,51,.1);margin-bottom:9px}
 .redact i:nth-child(2){width:86%}
 .redact i:nth-child(3){width:62%}
-.card .lbl{margin-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;color:var(--slate)}
-.gap-note{margin-top:30px;font-size:17px;color:#A9B1B8;max-width:64ch}
-.gap-note b{color:var(--lime)}
+.card .lbl{margin-top:16px;font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--muted)}
+.gap-note{margin-top:28px;font-size:16.5px;color:var(--ink-soft);max-width:64ch}
+.gap-note b{color:var(--ink)}
 
-/* ---------- quote ---------- */
-.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px}
-@media(max-width:880px){.quote-grid{grid-template-columns:1fr;gap:28px}}
-blockquote{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.9vw,31px);letter-spacing:-.025em;line-height:1.24}
-cite{display:block;margin-top:22px;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.14em;color:var(--ochre)}
-.quote-grid p{color:#A9B1B8;margin-bottom:17px}
+/* quote */
+.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+@media(max-width:860px){.quote-grid{grid-template-columns:1fr;gap:28px}}
+blockquote{font-size:clamp(1.35rem,2.8vw,1.9rem);line-height:1.28;color:var(--ivory)}
+cite{display:block;margin-top:20px;font-family:var(--sans);font-style:normal;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--ochre)}
+.quote-grid p{color:rgba(246,243,237,.72);margin-bottom:16px}
 
-/* ---------- contact ---------- */
-.contact{background:var(--ochre);color:var(--stone);padding:104px 0}
-.contact h2{color:var(--stone);font-size:clamp(32px,5.4vw,60px)}
-.contact .sub{color:#4A3B1C;max-width:52ch}
-.phone{display:inline-block;font-family:var(--mono);font-weight:700;font-size:clamp(32px,7vw,64px);color:var(--stone);text-decoration:none;margin-top:34px;letter-spacing:-.03em}
-.phone:hover{text-decoration:underline;text-underline-offset:10px}
-.c-meta{margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:#5A4820}
-.c-mail{margin-top:26px;font-size:17px;color:#3E3216}
-.c-mail a{color:var(--stone);font-weight:600}
+/* contact */
+.contact-inner{background:
+  radial-gradient(ellipse 60% 80% at 100% 50%, rgba(201,162,74,.22), transparent 55%),
+  linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color:var(--ivory);border-radius:24px;padding:clamp(2.5rem,5vw,4rem);position:relative;overflow:hidden}
+.contact-inner h2{color:var(--ivory);font-size:clamp(2rem,4.5vw,3.2rem)}
+.contact-inner .sub{color:rgba(246,243,237,.7)}
+.phone{display:inline-block;font-family:var(--serif);font-weight:500;font-size:clamp(2rem,6vw,3.6rem);color:var(--ochre-soft);margin-top:28px;letter-spacing:-.03em}
+.phone:hover{text-decoration:underline;text-underline-offset:8px}
+.c-meta{margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,243,237,.5)}
+.c-mail{margin-top:22px;color:rgba(246,243,237,.7)}
+.c-mail a{color:var(--ivory);font-weight:600;border-bottom:1px solid rgba(246,243,237,.3)}
 
-footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
-.fwrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.disc{margin-top:22px;padding-top:20px;border-top:1px solid rgba(239,237,231,.08);font-size:12.5px;line-height:1.65;max-width:78ch}
-.tag{position:fixed;left:16px;bottom:16px;z-index:70;background:var(--oxide);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:7px 11px;border-radius:2px}
+footer{padding:40px 0 56px;font-size:13.5px;color:var(--muted)}
+.fline{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line)}
+.disc{margin-top:18px;font-size:12.5px;line-height:1.65;max-width:78ch}
+.tag{position:fixed;left:16px;bottom:16px;z-index:70;background:var(--navy);color:var(--ivory);font-size:10px;font-weight:700;letter-spacing:.1em;padding:8px 12px;border-radius:999px}
 @media(max-width:640px){.tag{display:none}}
 </style>
 </head>
@@ -189,93 +212,86 @@ footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
 <nav class="nav">
   <div class="wrap">
     <div class="brand">Bezemer Home &amp; Pest<span>BLD LIC R37257 · ADELAIDE SA</span></div>
-    <div class="nav-links">
+    <div class="nlinks">
       <a href="#walk">The inspection</a>
       <a href="#report">The report</a>
       <a href="#how">How it runs</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="call" href="tel:+61402105177">0402 105 177</a>
+    <a class="ncall" href="tel:+61402105177">0402 105 177</a>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero surface-navy">
   <div class="wrap">
-    <p class="eyebrow">PRE-PURCHASE BUILDING &amp; PEST · SOUTH AUSTRALIA</p>
-    <h1>Forty years on the tools. <em>One</em> afternoon on your house.</h1>
+    <p class="eyebrow">Pre-purchase building &amp; pest · South Australia</p>
+    <h1>Forty years on the tools. <em>One afternoon</em> on your house.</h1>
     <p class="lede">Robert Bezemer built homes in South Australia for four decades. Now he walks through the one you're about to buy and tells you plainly what he found.</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" href="tel:+61402105177">Ring or text Robert<span>0402 105 177 · SEVEN DAYS</span></a>
-      <a class="btn btn-line" href="#walk">See what he checks</a>
+    <div class="acts">
+      <a class="btn btn-primary" href="tel:+61402105177">Ring or text Robert<small>0402 105 177 · SEVEN DAYS</small></a>
+      <a class="btn btn-ghost" href="#walk">See what he checks</a>
     </div>
-
-    <div class="facts">
-      <div class="fact"><b>40</b><span>YEARS BUILDING IN<br>SOUTH AUSTRALIA</span></div>
-      <div class="fact"><b>1</b><span>INSPECTOR ON SITE,<br>NEVER A SUBBIE</span></div>
-      <div class="fact"><b>Same day</b><span>REPORT IN YOUR INBOX<br>THE EVENING HE ATTENDS</span></div>
-      <div class="fact"><b>R37257</b><span>SA BUILDING LICENCE,<br>CHECK IT YOURSELF</span></div>
+  </div>
+  <div class="trust">
+    <div class="wrap">
+      <div class="trust-item"><b>40</b><span>Years building in South Australia</span></div>
+      <div class="trust-item"><b>1</b><span>Inspector on site, never a subbie</span></div>
+      <div class="trust-item"><b>Same day</b><span>Report in your inbox the evening he attends</span></div>
+      <div class="trust-item"><b>R37257</b><span>SA building licence, check it yourself</span></div>
     </div>
   </div>
 </header>
 
+<div class="seam" aria-hidden="true"></div>
+
 <main id="main">
 
-<section class="walk" id="walk">
+<section class="surface-navy" id="walk" style="padding-top:clamp(3.5rem,6vw,5rem)">
   <div class="wrap">
-    <p class="kick rv">THE INSPECTION</p>
+    <p class="kick rv">The inspection</p>
     <h2 class="rv">Walk the house with him.</h2>
-    <p class="sub rv">Six places a pre-purchase inspection lives or dies. Tap one and he'll tell you what he's looking for there, and what he keeps finding.</p>
+    <p class="sub rv">Six places a pre-purchase inspection lives or dies. Tap a number and he'll tell you what he's looking for there — and what he keeps finding.</p>
 
     <div class="walk-grid">
       <div>
         <div class="house rv">
-          <svg viewBox="0 0 800 560" role="img" aria-label="Cross-section diagram of a house showing roof, roof void, walls, subfloor, site drainage and garage">
+          <svg viewBox="0 0 800 560" role="img" aria-label="Cross-section of a house showing roof, roof void, walls, subfloor, drainage and garage">
             <defs>
               <pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-                <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(239,237,231,.10)" stroke-width="3"/>
+                <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(246,243,237,.08)" stroke-width="3"/>
               </pattern>
             </defs>
-            <!-- ground -->
             <rect x="0" y="430" width="800" height="130" fill="url(#hatch)"/>
-            <line x1="0" y1="430" x2="800" y2="430" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
-            <!-- roof -->
-            <path d="M180 250 L400 120 L620 250" fill="none" stroke="rgba(239,237,231,.55)" stroke-width="2.5"/>
-            <path d="M180 250 L400 120 L620 250 Z" fill="rgba(239,237,231,.035)"/>
-            <!-- ceiling line = roof void floor -->
-            <line x1="200" y1="250" x2="600" y2="250" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
-            <!-- walls -->
-            <line x1="200" y1="250" x2="200" y2="390" stroke="rgba(239,237,231,.55)" stroke-width="2.5"/>
-            <line x1="600" y1="250" x2="600" y2="390" stroke="rgba(239,237,231,.55)" stroke-width="2.5"/>
-            <!-- floor -->
-            <line x1="200" y1="390" x2="600" y2="390" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
-            <!-- subfloor piers -->
-            <line x1="200" y1="390" x2="200" y2="430" stroke="rgba(239,237,231,.3)" stroke-width="2"/>
-            <line x1="600" y1="390" x2="600" y2="430" stroke="rgba(239,237,231,.3)" stroke-width="2"/>
-            <rect x="300" y="390" width="18" height="40" fill="rgba(239,237,231,.13)"/>
-            <rect x="400" y="390" width="18" height="40" fill="rgba(239,237,231,.13)"/>
-            <rect x="500" y="390" width="18" height="40" fill="rgba(239,237,231,.13)"/>
-            <!-- interior detail -->
-            <line x1="330" y1="250" x2="330" y2="390" stroke="rgba(239,237,231,.16)" stroke-width="1.5"/>
-            <line x1="470" y1="250" x2="470" y2="390" stroke="rgba(239,237,231,.16)" stroke-width="1.5"/>
-            <!-- garage -->
-            <path d="M620 330 L730 330 L730 430" fill="none" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
-            <line x1="620" y1="330" x2="620" y2="430" stroke="rgba(239,237,231,.2)" stroke-width="1.5"/>
-            <!-- downpipe + drainage -->
-            <line x1="176" y1="252" x2="176" y2="430" stroke="rgba(180,84,48,.75)" stroke-width="3"/>
-            <path d="M120 430 q30 -14 56 0" fill="none" stroke="rgba(180,84,48,.5)" stroke-width="2"/>
+            <line x1="0" y1="430" x2="800" y2="430" stroke="rgba(246,243,237,.3)" stroke-width="2"/>
+            <path d="M180 250 L400 120 L620 250" fill="none" stroke="rgba(246,243,237,.55)" stroke-width="2.5"/>
+            <path d="M180 250 L400 120 L620 250 Z" fill="rgba(246,243,237,.04)"/>
+            <line x1="200" y1="250" x2="600" y2="250" stroke="rgba(246,243,237,.3)" stroke-width="2"/>
+            <line x1="200" y1="250" x2="200" y2="390" stroke="rgba(246,243,237,.5)" stroke-width="2.5"/>
+            <line x1="600" y1="250" x2="600" y2="390" stroke="rgba(246,243,237,.5)" stroke-width="2.5"/>
+            <line x1="200" y1="390" x2="600" y2="390" stroke="rgba(246,243,237,.3)" stroke-width="2"/>
+            <line x1="200" y1="390" x2="200" y2="430" stroke="rgba(246,243,237,.25)" stroke-width="2"/>
+            <line x1="600" y1="390" x2="600" y2="430" stroke="rgba(246,243,237,.25)" stroke-width="2"/>
+            <rect x="300" y="390" width="18" height="40" fill="rgba(246,243,237,.12)"/>
+            <rect x="400" y="390" width="18" height="40" fill="rgba(246,243,237,.12)"/>
+            <rect x="500" y="390" width="18" height="40" fill="rgba(246,243,237,.12)"/>
+            <line x1="330" y1="250" x2="330" y2="390" stroke="rgba(246,243,237,.14)" stroke-width="1.5"/>
+            <line x1="470" y1="250" x2="470" y2="390" stroke="rgba(246,243,237,.14)" stroke-width="1.5"/>
+            <path d="M620 330 L730 330 L730 430" fill="none" stroke="rgba(246,243,237,.32)" stroke-width="2"/>
+            <line x1="620" y1="330" x2="620" y2="430" stroke="rgba(246,243,237,.18)" stroke-width="1.5"/>
+            <line x1="176" y1="252" x2="176" y2="430" stroke="rgba(201,162,74,.75)" stroke-width="3"/>
+            <path d="M120 430 q30 -14 56 0" fill="none" stroke="rgba(201,162,74,.45)" stroke-width="2"/>
           </svg>
-
-          <button class="hot pulse" style="left:36%;top:30%" data-zone="0" aria-pressed="true" aria-controls="zonepanel">1</button>
+          <button class="hot" style="left:36%;top:30%" data-zone="0" aria-pressed="true" aria-controls="zonepanel">1</button>
           <button class="hot" style="left:50%;top:41%" data-zone="1" aria-pressed="false" aria-controls="zonepanel">2</button>
           <button class="hot" style="left:25%;top:57%" data-zone="2" aria-pressed="false" aria-controls="zonepanel">3</button>
           <button class="hot" style="left:50%;top:73%" data-zone="3" aria-pressed="false" aria-controls="zonepanel">4</button>
           <button class="hot" style="left:17%;top:79%" data-zone="4" aria-pressed="false" aria-controls="zonepanel">5</button>
           <button class="hot" style="left:84%;top:68%" data-zone="5" aria-pressed="false" aria-controls="zonepanel">6</button>
         </div>
-        <p class="walk-hint">TAP A NUMBER · OR TAB THROUGH THEM</p>
+        <p class="hint">Tap a number · or tab through them</p>
       </div>
 
-      <div class="zone-panel" id="zonepanel" aria-live="polite">
+      <div class="zone" id="zonepanel" aria-live="polite">
         <p class="z-no" id="z-no">ZONE 01</p>
         <h3 id="z-title">Roof exterior</h3>
         <p class="z-check" id="z-check">Tiles, ridge capping, valleys, flashings, gutters and downpipes, walked where it's safe to walk.</p>
@@ -289,65 +305,41 @@ footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
   </div>
 </section>
 
-<section id="report">
+<div class="seam" aria-hidden="true"></div>
+
+<section class="surface-ivory" id="report">
   <div class="wrap">
     <div class="report-grid">
       <div>
-        <p class="kick rv">THE REPORT</p>
+        <p class="kick rv">The report</p>
         <h2 class="rv">Read one before you book.</h2>
-        <p class="sub rv">Most inspectors ask you to pay first and find out what you bought afterwards. Every defect in his report is photographed, located to a wall and a corner, and rated major or minor, so you can tell a settlement problem from a Saturday job.</p>
-        <p class="sub rv" style="margin-top:22px">The page nobody else publishes is the one listing what couldn't be reached on the day. It's in there too.</p>
-        <div class="hero-actions rv"><a class="btn btn-solid" href="sample-report.html">Read the full sample report<span>ADDRESS REMOVED</span></a></div>
+        <p class="sub rv">Most inspectors ask you to pay first and find out what you bought afterwards. Every defect in his report is photographed, located to a wall and a corner, and rated major or minor — so you can tell a settlement problem from a Saturday job.</p>
+        <p class="sub rv">The page nobody else publishes is the one listing what couldn't be reached on the day. It's in there too.</p>
+        <a class="btn-dark" href="sample-report.html">Read the full sample report<small>ADDRESS REMOVED</small></a>
       </div>
       <div class="stack rv" aria-hidden="true">
         <div class="pg pg1"></div>
         <div class="pg pg2"></div>
         <div class="pg pg3">
           <div class="pg-head"><strong>Defects — page 6 of 41</strong><span>SAMPLE</span></div>
-          <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Salt damp to south wall<em>Rising moisture 900mm above ground level</em></div><span class="pg-tag">MAJOR</span></div>
+          <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Salt damp to south wall<em>Rising moisture 900mm above ground</em></div><span class="pg-tag">MAJOR</span></div>
           <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Stormwater at the footing<em>Downpipe unconnected, active scour</em></div><span class="pg-tag">MAJOR</span></div>
-          <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Termite workings, subfloor<em>Inactive mudding to bearer at pier 4</em></div><span class="pg-tag">MAJOR</span></div>
+          <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Termite workings, subfloor<em>Inactive mudding at pier 4</em></div><span class="pg-tag">MAJOR</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reviews">
+<section class="surface-paper" id="how">
   <div class="wrap">
-    <p class="kick rv">CLIENTS</p>
-    <h2 class="rv">What clients say.</h2>
-    <p class="sub rv">Robert has no Google listing yet, so there's nothing here to quote. These are the slots. They fill the week the listing goes live.</p>
-    <div class="cards rv">
-      <div class="card">
-        <div class="stars" aria-label="Review placeholder">★★★★★</div>
-        <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p>
-      </div>
-      <div class="card">
-        <div class="stars" aria-label="Review placeholder">★★★★★</div>
-        <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p>
-      </div>
-      <div class="card">
-        <div class="stars" aria-label="Review placeholder">★★★★★</div>
-        <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p>
-      </div>
-    </div>
-    <p class="gap-note rv">Six Adelaide inspection businesses rank above this one on Google. They hold between <b>94 and 473 reviews</b> each. Every one of Robert's clients has already had the phone call where he explains the report. The ask that turns those calls into reviews is one text message afterwards.</p>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <p class="kick rv">HOW IT RUNS</p>
+    <p class="kick rv">How it runs</p>
     <h2 class="rv">Booked this morning, read tonight.</h2>
     <div class="steps rv">
       <div class="step">
         <p class="n">STEP 01</p>
         <h3>Ring or text him</h3>
-        <p>Tell him the address and when your cooling-off period ends. He'll say straight away whether he can be there in time, and what it'll cost.</p>
+        <p>Tell him the address and when your cooling-off period ends. He'll say straight away whether he can be there in time.</p>
       </div>
       <div class="step">
         <p class="n">STEP 02</p>
@@ -368,7 +360,23 @@ footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
   </div>
 </section>
 
-<section>
+<section class="surface-ivory">
+  <div class="wrap">
+    <p class="kick rv">Clients</p>
+    <h2 class="rv">What clients say.</h2>
+    <p class="sub rv">Robert has no Google listing yet, so there's nothing here to quote. These are the slots. They fill the week the listing goes live.</p>
+    <div class="cards rv">
+      <div class="card"><div class="stars">★★★★★</div><div class="redact" aria-hidden="true"><i></i><i></i><i></i></div><p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p></div>
+      <div class="card"><div class="stars">★★★★★</div><div class="redact" aria-hidden="true"><i></i><i></i><i></i></div><p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p></div>
+      <div class="card"><div class="stars">★★★★★</div><div class="redact" aria-hidden="true"><i></i><i></i><i></i></div><p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p></div>
+    </div>
+    <p class="gap-note rv">Six Adelaide inspection businesses rank above this one on Google. They hold between <b>94 and 473 reviews</b> each. Every one of Robert's clients has already had the phone call where he explains the report. The ask that turns those calls into reviews is one text message afterwards.</p>
+  </div>
+</section>
+
+<div class="seam seam-up" aria-hidden="true"></div>
+
+<section class="surface-navy">
   <div class="wrap quote-grid">
     <div>
       <blockquote>“I've built houses in this state for forty years. I inspect them the same way I built them, and I tell you what I'd do if it were my money.”</blockquote>
@@ -377,18 +385,20 @@ footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
     <div>
       <p class="rv">Robert started on the tools in South Australia in the mid-1980s and spent four decades building, supervising and repairing homes across Adelaide. That's why the reports read the way they do: he's fixed most of what he finds.</p>
       <p class="rv">He inspects every property himself. No roster of subcontractors, no franchise office between you and the person who walked the roof void. If something in the report isn't clear, the number you ring is his.</p>
-      <p class="rv">Inspections are carried out to Australian Standards AS 4349.1 for building and AS 4349.3 for timber pests. The business carries current professional indemnity and public liability insurance, and the SA building licence above can be checked on the public register.</p>
+      <p class="rv">Inspections are carried out to Australian Standards AS 4349.1 for building and AS 4349.3 for timber pests. The business carries current professional indemnity and public liability insurance.</p>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="surface-ivory" id="contact" style="padding-bottom:clamp(4rem,8vw,6rem)">
   <div class="wrap">
-    <h2>Ring or text Robert. Seven days.</h2>
-    <p class="sub">Tell him the address and the date your cooling-off period ends. That's the whole booking process.</p>
-    <a class="phone" href="tel:+61402105177">0402 105 177</a>
-    <p class="c-meta">7AM – 8PM, SEVEN DAYS · ADELAIDE &amp; SURROUNDS</p>
-    <p class="c-mail">Or email <a href="mailto:bez@home-inspection.com.au">bez@home-inspection.com.au</a></p>
+    <div class="contact-inner">
+      <h2>Ring or text Robert. Seven days.</h2>
+      <p class="sub">Tell him the address and the date your cooling-off period ends. That's the whole booking process.</p>
+      <a class="phone" href="tel:+61402105177">0402 105 177</a>
+      <p class="c-meta">7AM – 8PM · Adelaide &amp; surrounds</p>
+      <p class="c-mail">Or email <a href="mailto:bez@home-inspection.com.au">bez@home-inspection.com.au</a></p>
+    </div>
   </div>
 </section>
 
@@ -396,11 +406,11 @@ footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
 
 <footer>
   <div class="wrap">
-    <div class="fwrap">
+    <div class="fline">
       <div>Bezemer Home &amp; Pest Inspections · Adelaide, South Australia</div>
-      <div class="mono" style="font-size:12px">BLD LIC R37257</div>
+      <div>BLD LIC R37257</div>
     </div>
-    <p class="disc">This page is an unsolicited design concept prepared by Valkyra Labs. It is not affiliated with, endorsed by, or operated by Bezemer Home &amp; Pest Inspections. Business name, phone number, email address, licence number and the defect categories were taken from the live website at home-inspection.com.au. The sample report extract, trading hours, turnaround time and inspection commentary are illustrative and are not statements by the business. Photograph slots and review slots are deliberately blank: this concept does not invent inspection photographs or client reviews. Nothing here is a quote or an offer.</p>
+    <p class="disc">This page is an unsolicited design concept prepared by Valkyra Labs. It is not affiliated with, endorsed by, or operated by Bezemer Home &amp; Pest Inspections. Business name, phone number, email address, licence number and defect categories were taken from the live website at home-inspection.com.au. The sample report extract, trading hours, turnaround time and inspection commentary are illustrative and are not statements by the business. Photograph slots and review slots are deliberately blank. Nothing here is a quote or an offer.</p>
   </div>
 </footer>
 
@@ -409,94 +419,43 @@ footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
 <script>
 (function(){
   var zones = [
-    {
-      title:"Roof exterior",
-      check:"Tiles, ridge capping, valleys, flashings, gutters and downpipes, walked where it's safe to walk.",
-      list:["Cracked or slipped tiles and bedding","Ridge capping and pointing","Valley flashings and penetrations","Gutter fall, rust and overflow","Downpipe connections"],
-      note:"Lifted valley flashing. It's the usual source of the ceiling stain everyone blames on the bathroom."
-    },
-    {
-      title:"Roof void",
-      check:"Up through the manhole with a torch, across the framing where the ceiling will carry weight.",
-      list:["Rafters, purlins and hanging beams","Water staining and active leaks","Insulation coverage and clearances","Downlight clearance to insulation","Vermin and termite leads"],
-      note:"Insulation packed hard against downlights. Costs nothing to pull back and it's a fire risk sitting above the bedrooms."
-    },
-    {
-      title:"Walls and footings",
-      check:"Brickwork inside and out, mortar condition, and the crack patterns that mean movement rather than shrinkage.",
-      list:["Brick and mortar deterioration","Damp proof course and salt damp","Structural cracking and displacement","Lintels over openings","Render condition and drummy sections"],
-      note:"Salt damp climbing past 900mm. That's a breached damp proof course, not a wall that needs re-rendering."
-    },
-    {
-      title:"Subfloor",
-      check:"Under the house on his back with a torch and a moisture meter, wherever there's clearance to get in.",
-      list:["Bearers, joists and piers","Subfloor ventilation and cross-flow","Moisture readings in the timber","Termite workings and borer damage","Bouncy or unlevel flooring above"],
-      note:"Restricted ventilation. It's what brings termites back after the treatment everyone paid for."
-    },
-    {
-      title:"Site and drainage",
-      check:"The ground around the house, which is where most expensive defects actually start.",
-      list:["Stormwater and downpipe discharge","Surface fall away from the building","Retaining wall condition and lean","Tree root proximity","Paving and slab edge levels"],
-      note:"A downpipe discharging at the footing. Cheapest defect in the report and the cause of the dearest one."
-    },
-    {
-      title:"Garage and outbuildings",
-      check:"The parts people stop looking at once they've decided they like the kitchen.",
-      list:["Slab cracking and movement","Lintels and door frames","Carport posts and footings","Fencing and gates","Sheds and lean-tos"],
-      note:"Lintels over the garage opening. They rust, they lift the brickwork, and nobody looks up on inspection day."
-    }
+    {title:"Roof exterior",check:"Tiles, ridge capping, valleys, flashings, gutters and downpipes, walked where it's safe to walk.",list:["Cracked or slipped tiles and bedding","Ridge capping and pointing","Valley flashings and penetrations","Gutter fall, rust and overflow","Downpipe connections"],note:"Lifted valley flashing. It's the usual source of the ceiling stain everyone blames on the bathroom."},
+    {title:"Roof void",check:"Up through the manhole with a torch, across the framing where the ceiling will carry weight.",list:["Rafters, purlins and hanging beams","Water staining and active leaks","Insulation coverage and clearances","Downlight clearance to insulation","Vermin and termite leads"],note:"Insulation packed hard against downlights. Costs nothing to pull back and it's a fire risk sitting above the bedrooms."},
+    {title:"Walls and footings",check:"Brickwork inside and out, mortar condition, and the crack patterns that mean movement rather than shrinkage.",list:["Brick and mortar deterioration","Damp proof course and salt damp","Structural cracking and displacement","Lintels over openings","Render condition and drummy sections"],note:"Salt damp climbing past 900mm. That's a breached damp proof course, not a wall that needs re-rendering."},
+    {title:"Subfloor",check:"Under the house on his back with a torch and a moisture meter, wherever there's clearance to get in.",list:["Bearers, joists and piers","Subfloor ventilation and cross-flow","Moisture readings in the timber","Termite workings and borer damage","Bouncy or unlevel flooring above"],note:"Restricted ventilation. It's what brings termites back after the treatment everyone paid for."},
+    {title:"Site and drainage",check:"The ground around the house, which is where most expensive defects actually start.",list:["Stormwater and downpipe discharge","Surface fall away from the building","Retaining wall condition and lean","Tree root proximity","Paving and slab edge levels"],note:"A downpipe discharging at the footing. Cheapest defect in the report and the cause of the dearest one."},
+    {title:"Garage and outbuildings",check:"The parts people stop looking at once they've decided they like the kitchen.",list:["Slab cracking and movement","Lintels and door frames","Carport posts and footings","Fencing and gates","Sheds and lean-tos"],note:"Lintels over the garage opening. They rust, they lift the brickwork, and nobody looks up on inspection day."}
   ];
-
   var hots = Array.prototype.slice.call(document.querySelectorAll('.hot'));
   var elNo = document.getElementById('z-no');
   var elTitle = document.getElementById('z-title');
   var elCheck = document.getElementById('z-check');
   var elList = document.getElementById('z-list');
   var elNote = document.getElementById('z-note');
-
   function pad(n){ return n < 10 ? '0' + n : '' + n; }
-
   function show(i){
-    var z = zones[i];
-    if(!z) return;
+    var z = zones[i]; if(!z) return;
     elNo.textContent = 'ZONE ' + pad(i + 1);
     elTitle.textContent = z.title;
     elCheck.textContent = z.check;
     elNote.textContent = z.note;
     elList.innerHTML = '';
-    z.list.forEach(function(item){
-      var li = document.createElement('li');
-      li.textContent = item;
-      elList.appendChild(li);
-    });
-    hots.forEach(function(b, bi){
-      b.setAttribute('aria-pressed', bi === i ? 'true' : 'false');
-      b.classList.remove('pulse');
-    });
+    z.list.forEach(function(item){ var li = document.createElement('li'); li.textContent = item; elList.appendChild(li); });
+    hots.forEach(function(b, bi){ b.setAttribute('aria-pressed', bi === i ? 'true' : 'false'); });
   }
-
   hots.forEach(function(b, i){
     b.addEventListener('click', function(){ show(i); });
     b.addEventListener('mouseenter', function(){ show(i); });
   });
-
   show(0);
-  hots[0].classList.add('pulse');
-
-  // reveal on scroll
   var rv = document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { rootMargin: '0px 0px -60px 0px' });
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -50px 0px' });
     rv.forEach(function(el){ io.observe(el); });
-  } else {
-    rv.forEach(function(el){ el.classList.add('in'); });
-  }
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
 })();
 </script>
-
 </body>
 </html>
