@@ -5,449 +5,390 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Bezemer Home &amp; Pest Inspections — Adelaide building and pest inspections — Concept</title>
-<meta name="description" content="Pre-purchase building and pest inspections across Adelaide. Fixed prices, report the same evening, inspected by Robert Bezemer. Concept page by Valkyra Labs.">
+<meta name="description" content="Pre-purchase building and pest inspections across Adelaide, inspected by Robert Bezemer. Concept page by Valkyra Labs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bluestone:#171C21;
-  --bluestone-2:#232C33;
-  --limestone:#F1EEE8;
-  --limestone-2:#E2DDD3;
-  --paper:#FFFFFF;
-  --oxide:#A8482A;
-  --ochre:#D99A2B;
-  --ochre-lift:#E8AC42;
-  --slate:#5F6871;
-  --ok:#2E6B4F;
+  --stone:#12171B;
+  --stone-2:#1B2228;
+  --stone-3:#2A343C;
+  --lime:#EFEDE7;
+  --lime-2:#D9D4C9;
+  --ochre:#E0A63B;
+  --ochre-2:#F0BC5C;
+  --oxide:#B45430;
+  --slate:#8B949C;
   --display:'Archivo',system-ui,sans-serif;
   --body:'Source Sans 3',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
-  --rule:1px solid var(--limestone-2);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:74px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{font-family:var(--body);background:var(--limestone);color:var(--bluestone);font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
-.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--body);background:var(--stone);color:var(--lime);font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 26px}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:2px}
-.skip{position:absolute;left:-9999px;top:0;background:var(--ochre);color:var(--bluestone);padding:12px 18px;font-family:var(--display);font-weight:700;z-index:99}
-.skip:focus{left:12px;top:12px}
-h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;line-height:1.04}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.035em;line-height:1.02}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:4px;border-radius:2px}
+.skip{position:absolute;left:-9999px;background:var(--ochre);color:var(--stone);padding:12px 18px;font-weight:700;z-index:99}
+.skip:focus{left:14px;top:14px}
+.mono{font-family:var(--mono)}
 
-/* ---------- sticky call bar ---------- */
-.bar{position:sticky;top:0;z-index:50;background:var(--bluestone);color:var(--limestone);border-bottom:1px solid rgba(241,238,232,.14)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.mark{font-family:var(--display);font-weight:800;font-size:17px;line-height:1.1}
-.mark span{display:block;font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.14em;color:var(--ochre);margin-top:4px}
-.bar-actions{display:flex;align-items:center;gap:10px}
-.bar-hours{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#9AA2AA}
-@media(max-width:720px){.bar-hours{display:none}}
-.bar-call{font-family:var(--mono);font-weight:700;font-size:15px;background:var(--ochre);color:var(--bluestone);padding:12px 18px;border-radius:2px;text-decoration:none;white-space:nowrap}
-.bar-call:hover{background:var(--ochre-lift)}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(18,23,27,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(239,237,231,.1)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:72px}
+.brand{font-family:var(--display);font-weight:800;font-size:17px;line-height:1.05;letter-spacing:-.02em}
+.brand span{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--ochre);margin-top:4px}
+.nav-links{display:flex;gap:28px;font-size:14.5px;color:var(--slate)}
+.nav-links a{text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+.nav-links a:hover{color:var(--lime);border-bottom-color:var(--ochre)}
+@media(max-width:900px){.nav-links{display:none}}
+.call{font-family:var(--mono);font-weight:700;font-size:14.5px;background:var(--ochre);color:var(--stone);padding:12px 18px;border-radius:2px;text-decoration:none;white-space:nowrap}
+.call:hover{background:var(--ochre-2)}
+@media(max-width:430px){.brand span{display:none}.call{font-size:13px;padding:11px 13px}}
 
 /* ---------- hero ---------- */
-.hero{background:var(--bluestone);color:var(--limestone);padding:70px 0 0}
-.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:start}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:38px}}
-.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--ochre);margin-bottom:26px}
-h1{font-weight:800;font-size:clamp(40px,5.6vw,64px);max-width:15ch}
+.hero{padding:146px 0 90px;position:relative}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(680px 380px at 78% 12%,rgba(224,166,59,.13),transparent 70%)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--ochre);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.eyebrow::after{content:"";height:1px;flex:1;max-width:190px;background:linear-gradient(90deg,var(--ochre),transparent)}
+h1{font-weight:800;font-size:clamp(44px,8.4vw,104px);max-width:13ch}
 h1 em{font-style:normal;color:var(--ochre)}
-.lede{margin-top:24px;font-size:clamp(17px,2.1vw,20px);max-width:48ch;color:#C6CBD1}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:17px;padding:17px 27px;border-radius:2px;text-decoration:none}
-.btn-primary{background:var(--ochre);color:var(--bluestone)}
-.btn-primary:hover{background:var(--ochre-lift)}
-.btn-primary span{font-family:var(--mono);display:block;font-size:11px;font-weight:400;letter-spacing:.12em;opacity:.74;margin-top:3px}
-.btn-ghost{border:1px solid rgba(241,238,232,.34);color:var(--limestone);padding:17px 27px}
-.btn-ghost:hover{border-color:var(--ochre);color:var(--ochre)}
-.promise{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 30px;font-size:16px;color:#C6CBD1}
-.promise div{display:flex;gap:9px;align-items:baseline}
-.promise b{color:var(--limestone);font-weight:600}
-.promise i{font-style:normal;color:var(--ochre);font-family:var(--mono);font-size:13px}
-.creds{margin-top:48px;border-top:1px solid rgba(241,238,232,.14);padding:20px 0 30px;display:flex;flex-wrap:wrap;gap:10px 38px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:#949CA4}
-.creds b{color:var(--limestone);font-weight:400}
+.hero .lede{margin-top:28px;font-size:clamp(18px,2.2vw,22px);max-width:46ch;color:#B9C0C6}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:17px;padding:17px 28px;border-radius:2px;text-decoration:none}
+.btn-solid{background:var(--ochre);color:var(--stone)}
+.btn-solid:hover{background:var(--ochre-2)}
+.btn-solid span{display:block;font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.12em;opacity:.72;margin-top:3px}
+.btn-line{border:1px solid rgba(239,237,231,.28);color:var(--lime);padding:17px 28px}
+.btn-line:hover{border-color:var(--ochre);color:var(--ochre)}
 
-/* ---------- report sheet ---------- */
-.sheet{background:var(--paper);color:var(--bluestone);border-radius:3px;padding:20px 22px;box-shadow:0 22px 48px rgba(0,0,0,.34)}
-.sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:2px solid var(--bluestone);padding-bottom:11px}
-.sheet-head strong{font-family:var(--display);font-size:15px}
-.sheet-head span{font-family:var(--mono);font-size:10px;letter-spacing:.11em;color:var(--slate)}
-table.defects{width:100%;border-collapse:collapse;text-align:left}
-table.defects caption{position:absolute;left:-9999px}
-table.defects th{font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.13em;color:var(--slate);padding:10px 14px 8px 0;border-bottom:var(--rule);white-space:nowrap}
-table.defects th:last-child{padding-right:0;text-align:right}
-table.defects td{padding:12px 0;border-bottom:var(--rule);vertical-align:top}
-table.defects tr:last-child td{border-bottom:0}
-.ref{font-family:var(--mono);font-size:11.5px;color:var(--slate);padding-right:12px;white-space:nowrap}
-.what{font-size:15px;line-height:1.4;padding-right:12px}
-.what em{display:block;font-style:normal;font-size:13px;color:var(--slate);margin-top:4px}
-.pill{font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:4px 8px;border-radius:2px;white-space:nowrap}
-.pill.major{background:#F5E2DB;color:var(--oxide)}
-.pill.minor{background:var(--limestone-2);color:var(--slate)}
-/* Photo slots are deliberately blank: these are the client's photographs, and a
-   concept has no business inventing evidence of defects it never inspected. */
-.shot{width:74px;height:56px;border-radius:2px;background:
-  repeating-linear-gradient(135deg,var(--limestone-2) 0 7px,var(--limestone) 7px 14px);
-  border:1px solid var(--limestone-2);position:relative;overflow:hidden}
-.shot span{position:absolute;inset:auto 0 0 0;background:var(--bluestone);color:var(--limestone);
-  font-family:var(--mono);font-size:7.5px;letter-spacing:.08em;text-align:center;padding:2px 0}
-.sheet-foot{margin-top:14px;padding-top:12px;border-top:2px solid var(--bluestone);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.sheet-foot em{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--slate)}
-.sheet-foot a{font-family:var(--display);font-weight:700;font-size:14.5px;color:var(--oxide);text-decoration:none;border-bottom:2px solid var(--ochre);padding-bottom:2px}
-.sheet-foot a:hover{color:var(--bluestone)}
+.facts{margin-top:74px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border-top:1px solid rgba(239,237,231,.12)}
+.fact{padding:26px 26px 26px 0;border-right:1px solid rgba(239,237,231,.12)}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(30px,3.6vw,42px);letter-spacing:-.04em;color:var(--lime)}
+.fact span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--slate);margin-top:8px;line-height:1.7}
+@media(max-width:700px){.fact{border-right:0;border-bottom:1px solid rgba(239,237,231,.12);padding-right:0}}
+
+/* ---------- section shell ---------- */
+section{padding:104px 0}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--oxide);margin-bottom:18px}
+h2{font-weight:800;font-size:clamp(32px,5.2vw,58px);max-width:17ch}
+.sub{margin-top:20px;max-width:56ch;color:#A9B1B8;font-size:18px}
+
+/* ---------- walkthrough ---------- */
+.walk{background:var(--stone-2);border-top:1px solid rgba(239,237,231,.09);border-bottom:1px solid rgba(239,237,231,.09)}
+.walk-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;margin-top:54px;align-items:start}
+@media(max-width:1000px){.walk-grid{grid-template-columns:1fr;gap:34px}}
+
+.house{position:relative;width:100%;aspect-ratio:8/5.6;background:var(--stone);border:1px solid rgba(239,237,231,.1);border-radius:3px;overflow:hidden}
+.house svg{position:absolute;inset:0;width:100%;height:100%}
+.hot{position:absolute;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(224,166,59,.55);background:rgba(18,23,27,.72);color:var(--ochre);
+  font-family:var(--mono);font-size:12px;font-weight:700;cursor:pointer;display:grid;place-items:center;
+  transition:transform .22s ease,background .22s ease,border-color .22s ease}
+.hot::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(224,166,59,.28);opacity:0;transition:opacity .22s ease}
+.hot:hover{transform:translate(-50%,-50%) scale(1.12);background:rgba(224,166,59,.18)}
+.hot[aria-pressed="true"]{background:var(--ochre);color:var(--stone);border-color:var(--ochre)}
+.hot[aria-pressed="true"]::after{opacity:1}
+.pulse{animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,166,59,.34)}70%{box-shadow:0 0 0 16px rgba(224,166,59,0)}100%{box-shadow:0 0 0 0 rgba(224,166,59,0)}}
+
+.zone-panel{border-left:2px solid var(--ochre);padding-left:28px}
+@media(max-width:1000px){.zone-panel{border-left:0;border-top:2px solid var(--ochre);padding-left:0;padding-top:26px}}
+.zone-panel .z-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--ochre)}
+.zone-panel h3{font-weight:800;font-size:clamp(24px,3vw,33px);margin-top:12px}
+.zone-panel .z-check{margin-top:18px;color:#B9C0C6;font-size:17px}
+.zone-list{list-style:none;margin-top:20px}
+.zone-list li{padding:11px 0 11px 24px;border-top:1px solid rgba(239,237,231,.1);position:relative;font-size:16px;color:#C8CED3}
+.zone-list li::before{content:"";position:absolute;left:0;top:21px;width:11px;height:1px;background:var(--oxide)}
+.z-note{margin-top:24px;background:var(--stone-3);border-radius:3px;padding:20px 22px;font-size:16px;color:#CFD5D9}
+.z-note b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ochre);margin-bottom:9px;font-weight:400}
+.walk-hint{margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.13em;color:var(--slate)}
+
+/* ---------- report band ---------- */
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+@media(max-width:900px){.report-grid{grid-template-columns:1fr;gap:36px}}
+.stack{position:relative;height:330px}
+.pg{position:absolute;left:0;right:0;background:#fff;color:var(--stone);border-radius:2px;padding:22px 24px;box-shadow:0 20px 44px rgba(0,0,0,.42)}
+.pg1{top:0;transform:rotate(-3deg) translateX(6px);opacity:.5;height:290px}
+.pg2{top:14px;transform:rotate(2deg) translateX(-4px);opacity:.75;height:290px}
+.pg3{top:30px;height:290px;transition:transform .4s ease}
+.report-grid:hover .pg3{transform:translateY(-8px)}
+.pg-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--stone);padding-bottom:10px}
+.pg-head strong{font-family:var(--display);font-size:14.5px}
+.pg-head span{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;color:#6B747C}
+.pg-row{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #E4E0D8}
+.pg-row:last-child{border-bottom:0}
+.pg-shot{width:56px;height:42px;flex:none;border:1px solid #E4E0D8;border-radius:2px;
+  background:repeating-linear-gradient(135deg,#E4E0D8 0 6px,#F4F2ED 6px 12px)}
+.pg-txt{font-size:13.5px;line-height:1.4}
+.pg-txt em{display:block;font-style:normal;font-size:11.5px;color:#6B747C;margin-top:3px}
+.pg-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;padding:3px 7px;border-radius:2px;background:#F0DFD8;color:var(--oxide);flex:none}
+
+/* ---------- steps ---------- */
+.steps{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:rgba(239,237,231,.12)}
+.step{background:var(--stone);padding:32px 26px;position:relative}
+.step .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ochre)}
+.step h3{font-weight:700;font-size:20px;margin:14px 0 10px}
+.step p{font-size:16px;color:#A9B1B8}
 
 /* ---------- reviews ---------- */
-.reviews{background:var(--bluestone-2);color:var(--limestone);padding:64px 0}
-.reviews h2{font-weight:700;font-size:clamp(24px,3.5vw,33px)}
-.reviews .sub{color:#AEB5BC;margin-top:14px;max-width:58ch}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px}
-.card{border:1px dashed rgba(241,238,232,.3);border-radius:3px;padding:20px}
-.stars{color:var(--ochre);font-size:15px;letter-spacing:3px}
-.redact{margin-top:14px}
-.redact i{display:block;height:9px;border-radius:2px;background:rgba(241,238,232,.16);margin-bottom:8px}
-.redact i:nth-child(2){width:88%}
-.redact i:nth-child(3){width:64%}
-.card .who-line{margin-top:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;color:#8E969E}
-.reviews .note-line{margin-top:26px;font-size:15.5px;color:#AEB5BC;max-width:66ch}
-.reviews .note-line b{color:var(--limestone);font-weight:600}
+.reviews{background:var(--stone-2);border-top:1px solid rgba(239,237,231,.09)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:44px}
+.card{border:1px dashed rgba(239,237,231,.24);border-radius:3px;padding:24px}
+.stars{color:var(--ochre);letter-spacing:3px;font-size:15px}
+.redact{margin-top:16px}
+.redact i{display:block;height:9px;border-radius:2px;background:rgba(239,237,231,.13);margin-bottom:9px}
+.redact i:nth-child(2){width:86%}
+.redact i:nth-child(3){width:62%}
+.card .lbl{margin-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;color:var(--slate)}
+.gap-note{margin-top:30px;font-size:17px;color:#A9B1B8;max-width:64ch}
+.gap-note b{color:var(--lime)}
 
-/* ---------- sections ---------- */
-section.pad{padding:78px 0}
-.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--oxide);margin-bottom:14px}
-h2.big{font-weight:800;font-size:clamp(31px,4.6vw,46px);max-width:19ch}
-.intro{margin-top:16px;max-width:56ch;color:#3C444B;font-size:18px}
-
-/* ---------- prices ---------- */
-.docket{margin-top:44px;background:var(--paper);border:var(--rule);border-radius:3px;overflow:hidden}
-.docket-top{background:var(--bluestone);color:var(--limestone);padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-.docket-top strong{font-family:var(--display);font-weight:700;font-size:15px}
-.docket-top span{font-family:var(--mono);font-size:11px;letter-spacing:.13em;color:var(--ochre)}
-.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 26px;border-bottom:var(--rule)}
-.row:last-child{border-bottom:0}
-.row.pick{background:#FBF7EF;box-shadow:inset 3px 0 0 var(--ochre)}
-.svc{font-family:var(--display);font-weight:700;font-size:16.5px}
-.svc .tag{font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.1em;color:var(--oxide);margin-left:10px}
-.note{display:block;font-family:var(--body);font-weight:400;font-size:14.5px;color:var(--slate);margin-top:6px;max-width:54ch;letter-spacing:0}
-.amt{font-family:var(--mono);font-weight:700;font-size:21px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.docket-foot{padding:18px 26px;background:var(--limestone);border-top:var(--rule);font-size:15.5px;color:#3C444B}
-
-/* ---------- inclusions ---------- */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;background:var(--limestone-2)}
-@media(max-width:760px){.two{grid-template-columns:1fr}}
-.col{background:var(--limestone);padding:28px 26px}
-.col h3{font-weight:700;font-size:18px;margin-bottom:16px}
-.col ul{list-style:none}
-.col li{padding:9px 0 9px 26px;border-bottom:var(--rule);position:relative;font-size:16px}
-.col li:last-child{border-bottom:0}
-.col.in li::before{content:"";position:absolute;left:2px;top:16px;width:11px;height:6px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(-45deg)}
-.col.out li::before{content:"";position:absolute;left:2px;top:19px;width:11px;height:2px;background:var(--oxide)}
-
-/* ---------- defect inventory ---------- */
-.inventory{background:var(--bluestone-2);color:var(--limestone);padding:64px 0 70px}
-.inv-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:8px}
-.inv-head h2{font-weight:700;font-size:clamp(24px,3.4vw,32px)}
-.inv-head .n{font-family:var(--mono);font-size:12px;color:var(--ochre);letter-spacing:.12em}
-.inv-sub{color:#AEB5BC;max-width:58ch;margin-bottom:32px}
-.inv-list{columns:3;column-gap:44px;font-family:var(--display);font-weight:500;font-size:15.5px}
-.inv-list div{break-inside:avoid;padding:9px 0 9px 22px;border-bottom:1px solid rgba(241,238,232,.1);position:relative;line-height:1.35}
-.inv-list div::before{content:"";position:absolute;left:0;top:15px;width:9px;height:2px;background:var(--oxide)}
-@media(max-width:880px){.inv-list{columns:2;column-gap:30px}}
-@media(max-width:540px){.inv-list{columns:1}}
-
-/* ---------- how it runs ---------- */
-.steps{counter-reset:step;margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px;background:var(--limestone-2)}
-.step{background:var(--limestone);padding:26px 24px}
-.step h3{font-weight:700;font-size:17.5px;margin:12px 0 8px}
-.step p{font-size:15.5px;color:#3C444B}
-.step .num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--oxide)}
-
-/* ---------- who ---------- */
-.who{background:var(--paper);padding:74px 0}
-.who-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px}
-@media(max-width:860px){.who-grid{grid-template-columns:1fr;gap:28px}}
-.who blockquote{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.02em;line-height:1.3}
-.who cite{display:block;margin-top:18px;font-family:var(--mono);font-style:normal;font-size:11.5px;letter-spacing:.12em;color:var(--slate)}
-.who p{margin-bottom:16px;color:#3C444B}
+/* ---------- quote ---------- */
+.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px}
+@media(max-width:880px){.quote-grid{grid-template-columns:1fr;gap:28px}}
+blockquote{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.9vw,31px);letter-spacing:-.025em;line-height:1.24}
+cite{display:block;margin-top:22px;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.14em;color:var(--ochre)}
+.quote-grid p{color:#A9B1B8;margin-bottom:17px}
 
 /* ---------- contact ---------- */
-.contact{background:var(--bluestone);color:var(--limestone);padding:80px 0}
-.contact h2{font-weight:800;font-size:clamp(29px,4.4vw,44px);max-width:18ch}
-.phone{display:inline-block;font-family:var(--mono);font-weight:700;font-size:clamp(30px,6.2vw,53px);color:var(--ochre);text-decoration:none;margin-top:28px;letter-spacing:-.02em}
-.phone:hover{text-decoration:underline;text-underline-offset:8px}
-.hours{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:#949CA4;margin-top:10px}
-.mail{margin-top:26px;color:#C6CBD1}
-.mail a{color:var(--limestone)}
+.contact{background:var(--ochre);color:var(--stone);padding:104px 0}
+.contact h2{color:var(--stone);font-size:clamp(32px,5.4vw,60px)}
+.contact .sub{color:#4A3B1C;max-width:52ch}
+.phone{display:inline-block;font-family:var(--mono);font-weight:700;font-size:clamp(32px,7vw,64px);color:var(--stone);text-decoration:none;margin-top:34px;letter-spacing:-.03em}
+.phone:hover{text-decoration:underline;text-underline-offset:10px}
+.c-meta{margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:#5A4820}
+.c-mail{margin-top:26px;font-size:17px;color:#3E3216}
+.c-mail a{color:var(--stone);font-weight:600}
 
-/* ---------- footer ---------- */
-footer{background:#0F1417;color:#79828A;padding:36px 0;font-size:13.5px}
+footer{background:#0C1013;color:#77808A;padding:44px 0;font-size:13.5px}
 .fwrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.disclaimer{margin-top:20px;padding-top:18px;border-top:1px solid rgba(241,238,232,.09);font-size:12.5px;line-height:1.6;max-width:76ch}
-.tag{position:fixed;left:14px;bottom:14px;z-index:60;background:var(--oxide);color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;padding:7px 11px;border-radius:2px}
+.disc{margin-top:22px;padding-top:20px;border-top:1px solid rgba(239,237,231,.08);font-size:12.5px;line-height:1.65;max-width:78ch}
+.tag{position:fixed;left:16px;bottom:16px;z-index:70;background:var(--oxide);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:7px 11px;border-radius:2px}
 @media(max-width:640px){.tag{display:none}}
-@media print{.bar,.tag,.contact,.actions{display:none}body{background:#fff;font-size:12pt}}
 </style>
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="bar">
+<nav class="nav">
   <div class="wrap">
-    <div class="mark">Bezemer Home &amp; Pest<span>BLD LIC R37257 · ADELAIDE SA</span></div>
-    <div class="bar-actions">
-      <span class="bar-hours">7AM – 8PM, 7 DAYS</span>
-      <a class="bar-call" href="tel:+61402105177">0402 105 177</a>
+    <div class="brand">Bezemer Home &amp; Pest<span>BLD LIC R37257 · ADELAIDE SA</span></div>
+    <div class="nav-links">
+      <a href="#walk">The inspection</a>
+      <a href="#report">The report</a>
+      <a href="#how">How it runs</a>
+      <a href="#contact">Contact</a>
     </div>
+    <a class="call" href="tel:+61402105177">0402 105 177</a>
   </div>
-</div>
+</nav>
 
 <header class="hero">
   <div class="wrap">
-   <div class="hero-grid">
-    <div>
-      <p class="eyebrow">PRE-PURCHASE BUILDING &amp; PEST · SOUTH AUSTRALIA</p>
-      <h1>Know what you're buying <em>before</em> you sign.</h1>
-      <p class="lede">Robert Bezemer has spent 40 years building in South Australia. He inspects the house himself, and rings you the same day to tell you plainly what he found.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="tel:+61402105177">Ring or text Robert<span>0402 105 177 · 7 DAYS</span></a>
-        <a class="btn btn-ghost" href="#prices">See every price</a>
-      </div>
-      <div class="promise">
-        <div><i>01</i><span><b>Report the same evening</b> you're inspected</span></div>
-        <div><i>02</i><span><b>Fixed prices</b>, published, no quote form</span></div>
-        <div><i>03</i><span><b>Robert does the inspection</b>, not a subcontractor</span></div>
-      </div>
+    <p class="eyebrow">PRE-PURCHASE BUILDING &amp; PEST · SOUTH AUSTRALIA</p>
+    <h1>Forty years on the tools. <em>One</em> afternoon on your house.</h1>
+    <p class="lede">Robert Bezemer built homes in South Australia for four decades. Now he walks through the one you're about to buy and tells you plainly what he found.</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="tel:+61402105177">Ring or text Robert<span>0402 105 177 · SEVEN DAYS</span></a>
+      <a class="btn btn-line" href="#walk">See what he checks</a>
     </div>
 
-    <div class="sheet">
-      <div class="sheet-head"><strong>Defects — page 6 of 41</strong><span>SAMPLE · ADDRESS REMOVED</span></div>
-      <table class="defects">
-        <caption>Extract from a sample inspection report</caption>
-        <thead>
-          <tr><th scope="col">Ref</th><th scope="col">Photo</th><th scope="col">Defect</th><th scope="col">Rating</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="ref">4.2</td>
-            <td><div class="shot"><span>PHOTO 4.2</span></div></td>
-            <td class="what">Salt damp to south wall<em>Rising moisture 900mm above ground level, render blown across 3.4m</em></td>
-            <td><span class="pill major">MAJOR</span></td>
-          </tr>
-          <tr>
-            <td class="ref">4.3</td>
-            <td><div class="shot"><span>PHOTO 4.3</span></div></td>
-            <td class="what">Stormwater discharging to footing<em>Downpipe unconnected at north-east corner, active scour</em></td>
-            <td><span class="pill major">MAJOR</span></td>
-          </tr>
-          <tr>
-            <td class="ref">5.1</td>
-            <td><div class="shot"><span>PHOTO 5.1</span></div></td>
-            <td class="what">Termite workings, subfloor<em>Inactive mudding to bearer, sounding hollow at pier 4</em></td>
-            <td><span class="pill major">MAJOR</span></td>
-          </tr>
-          <tr>
-            <td class="ref">6.7</td>
-            <td><div class="shot"><span>PHOTO 6.7</span></div></td>
-            <td class="what">Non-compliant downlights<em>Insulation packed against 6 fittings in roof void</em></td>
-            <td><span class="pill minor">MINOR</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="sheet-foot">
-        <em>PHOTOGRAPHED · LOCATED · RATED</em>
-        <a href="sample-report.html">Read the full sample report</a>
-      </div>
-    </div>
-   </div>
-
-    <div class="creds">
-      <div>BUILDING LICENCE <b>R37257</b></div>
-      <div>MEMBER <b>MASTER BUILDERS SA</b></div>
-      <div>REGISTERED <b>MASTER INSPECTOR</b></div>
-      <div>INSPECTED TO <b>AS 4349.1 &amp; AS 4349.3</b></div>
-      <div>FULLY <b>LICENSED &amp; INSURED</b></div>
+    <div class="facts">
+      <div class="fact"><b>40</b><span>YEARS BUILDING IN<br>SOUTH AUSTRALIA</span></div>
+      <div class="fact"><b>1</b><span>INSPECTOR ON SITE,<br>NEVER A SUBBIE</span></div>
+      <div class="fact"><b>Same day</b><span>REPORT IN YOUR INBOX<br>THE EVENING HE ATTENDS</span></div>
+      <div class="fact"><b>R37257</b><span>SA BUILDING LICENCE,<br>CHECK IT YOURSELF</span></div>
     </div>
   </div>
 </header>
 
 <main id="main">
 
+<section class="walk" id="walk">
+  <div class="wrap">
+    <p class="kick rv">THE INSPECTION</p>
+    <h2 class="rv">Walk the house with him.</h2>
+    <p class="sub rv">Six places a pre-purchase inspection lives or dies. Tap one and he'll tell you what he's looking for there, and what he keeps finding.</p>
+
+    <div class="walk-grid">
+      <div>
+        <div class="house rv">
+          <svg viewBox="0 0 800 560" role="img" aria-label="Cross-section diagram of a house showing roof, roof void, walls, subfloor, site drainage and garage">
+            <defs>
+              <pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(239,237,231,.10)" stroke-width="3"/>
+              </pattern>
+            </defs>
+            <!-- ground -->
+            <rect x="0" y="430" width="800" height="130" fill="url(#hatch)"/>
+            <line x1="0" y1="430" x2="800" y2="430" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
+            <!-- roof -->
+            <path d="M180 250 L400 120 L620 250" fill="none" stroke="rgba(239,237,231,.55)" stroke-width="2.5"/>
+            <path d="M180 250 L400 120 L620 250 Z" fill="rgba(239,237,231,.035)"/>
+            <!-- ceiling line = roof void floor -->
+            <line x1="200" y1="250" x2="600" y2="250" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
+            <!-- walls -->
+            <line x1="200" y1="250" x2="200" y2="390" stroke="rgba(239,237,231,.55)" stroke-width="2.5"/>
+            <line x1="600" y1="250" x2="600" y2="390" stroke="rgba(239,237,231,.55)" stroke-width="2.5"/>
+            <!-- floor -->
+            <line x1="200" y1="390" x2="600" y2="390" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
+            <!-- subfloor piers -->
+            <line x1="200" y1="390" x2="200" y2="430" stroke="rgba(239,237,231,.3)" stroke-width="2"/>
+            <line x1="600" y1="390" x2="600" y2="430" stroke="rgba(239,237,231,.3)" stroke-width="2"/>
+            <rect x="300" y="390" width="18" height="40" fill="rgba(239,237,231,.13)"/>
+            <rect x="400" y="390" width="18" height="40" fill="rgba(239,237,231,.13)"/>
+            <rect x="500" y="390" width="18" height="40" fill="rgba(239,237,231,.13)"/>
+            <!-- interior detail -->
+            <line x1="330" y1="250" x2="330" y2="390" stroke="rgba(239,237,231,.16)" stroke-width="1.5"/>
+            <line x1="470" y1="250" x2="470" y2="390" stroke="rgba(239,237,231,.16)" stroke-width="1.5"/>
+            <!-- garage -->
+            <path d="M620 330 L730 330 L730 430" fill="none" stroke="rgba(239,237,231,.35)" stroke-width="2"/>
+            <line x1="620" y1="330" x2="620" y2="430" stroke="rgba(239,237,231,.2)" stroke-width="1.5"/>
+            <!-- downpipe + drainage -->
+            <line x1="176" y1="252" x2="176" y2="430" stroke="rgba(180,84,48,.75)" stroke-width="3"/>
+            <path d="M120 430 q30 -14 56 0" fill="none" stroke="rgba(180,84,48,.5)" stroke-width="2"/>
+          </svg>
+
+          <button class="hot pulse" style="left:36%;top:30%" data-zone="0" aria-pressed="true" aria-controls="zonepanel">1</button>
+          <button class="hot" style="left:50%;top:41%" data-zone="1" aria-pressed="false" aria-controls="zonepanel">2</button>
+          <button class="hot" style="left:25%;top:57%" data-zone="2" aria-pressed="false" aria-controls="zonepanel">3</button>
+          <button class="hot" style="left:50%;top:73%" data-zone="3" aria-pressed="false" aria-controls="zonepanel">4</button>
+          <button class="hot" style="left:17%;top:79%" data-zone="4" aria-pressed="false" aria-controls="zonepanel">5</button>
+          <button class="hot" style="left:84%;top:68%" data-zone="5" aria-pressed="false" aria-controls="zonepanel">6</button>
+        </div>
+        <p class="walk-hint">TAP A NUMBER · OR TAB THROUGH THEM</p>
+      </div>
+
+      <div class="zone-panel" id="zonepanel" aria-live="polite">
+        <p class="z-no" id="z-no">ZONE 01</p>
+        <h3 id="z-title">Roof exterior</h3>
+        <p class="z-check" id="z-check">Tiles, ridge capping, valleys, flashings, gutters and downpipes, walked where it's safe to walk.</p>
+        <ul class="zone-list" id="z-list"></ul>
+        <div class="z-note">
+          <b>WHAT HE KEEPS FINDING</b>
+          <span id="z-note">Lifted valley flashing. It's the usual source of the ceiling stain everyone blames on the bathroom.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="report">
+  <div class="wrap">
+    <div class="report-grid">
+      <div>
+        <p class="kick rv">THE REPORT</p>
+        <h2 class="rv">Read one before you book.</h2>
+        <p class="sub rv">Most inspectors ask you to pay first and find out what you bought afterwards. Every defect in his report is photographed, located to a wall and a corner, and rated major or minor, so you can tell a settlement problem from a Saturday job.</p>
+        <p class="sub rv" style="margin-top:22px">The page nobody else publishes is the one listing what couldn't be reached on the day. It's in there too.</p>
+        <div class="hero-actions rv"><a class="btn btn-solid" href="sample-report.html">Read the full sample report<span>ADDRESS REMOVED</span></a></div>
+      </div>
+      <div class="stack rv" aria-hidden="true">
+        <div class="pg pg1"></div>
+        <div class="pg pg2"></div>
+        <div class="pg pg3">
+          <div class="pg-head"><strong>Defects — page 6 of 41</strong><span>SAMPLE</span></div>
+          <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Salt damp to south wall<em>Rising moisture 900mm above ground level</em></div><span class="pg-tag">MAJOR</span></div>
+          <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Stormwater at the footing<em>Downpipe unconnected, active scour</em></div><span class="pg-tag">MAJOR</span></div>
+          <div class="pg-row"><div class="pg-shot"></div><div class="pg-txt">Termite workings, subfloor<em>Inactive mudding to bearer at pier 4</em></div><span class="pg-tag">MAJOR</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="reviews">
   <div class="wrap">
-    <h2>What clients say.</h2>
-    <p class="sub">Robert has no Google listing yet, so there is nothing here to quote. These are the slots, and they fill with real reviews the week the listing goes live.</p>
-    <div class="cards">
+    <p class="kick rv">CLIENTS</p>
+    <h2 class="rv">What clients say.</h2>
+    <p class="sub rv">Robert has no Google listing yet, so there's nothing here to quote. These are the slots. They fill the week the listing goes live.</p>
+    <div class="cards rv">
       <div class="card">
-        <div class="stars" aria-label="Five star review placeholder">★★★★★</div>
+        <div class="stars" aria-label="Review placeholder">★★★★★</div>
         <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="who-line">GOOGLE REVIEW · AWAITING LISTING</p>
+        <p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p>
       </div>
       <div class="card">
-        <div class="stars" aria-label="Five star review placeholder">★★★★★</div>
+        <div class="stars" aria-label="Review placeholder">★★★★★</div>
         <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="who-line">GOOGLE REVIEW · AWAITING LISTING</p>
+        <p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p>
       </div>
       <div class="card">
-        <div class="stars" aria-label="Five star review placeholder">★★★★★</div>
+        <div class="stars" aria-label="Review placeholder">★★★★★</div>
         <div class="redact" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="who-line">GOOGLE REVIEW · AWAITING LISTING</p>
+        <p class="lbl">GOOGLE REVIEW · AWAITING LISTING</p>
       </div>
     </div>
-    <p class="note-line">Six Adelaide inspection businesses rank above this one on Google. They hold between <b>94 and 473 reviews</b> each. Every one of Robert's clients has already had the phone call where he explains the report; the ask that turns those calls into reviews is a single text message afterwards.</p>
+    <p class="gap-note rv">Six Adelaide inspection businesses rank above this one on Google. They hold between <b>94 and 473 reviews</b> each. Every one of Robert's clients has already had the phone call where he explains the report. The ask that turns those calls into reviews is one text message afterwards.</p>
   </div>
 </section>
 
-<section class="pad" id="prices">
+<section id="how">
   <div class="wrap">
-    <p class="kicker">PRICES</p>
-    <h2 class="big">Every price, up front.</h2>
-    <p class="intro">No quote form and no callback to find out what it costs. This is the price you pay for a standard Adelaide home.</p>
-
-    <div class="docket">
-      <div class="docket-top"><strong>Bezemer Home &amp; Pest Inspections</strong><span>ADELAIDE &amp; SURROUNDS</span></div>
-
-      <div class="row pick">
-        <span class="svc">Pre-purchase building and pest inspection<span class="tag">MOST BOOKED</span>
-          <span class="note">The one to book before your cooling-off period ends. Structure, timber pests and the full defect list in a single report.</span>
-        </span>
-        <span class="amt">$600</span>
-      </div>
-      <div class="row">
-        <span class="svc">Pre-purchase building inspection only</span>
-        <span class="amt">$500</span>
-      </div>
-      <div class="row">
-        <span class="svc">Pest inspection only</span>
-        <span class="amt">$350</span>
-      </div>
-      <div class="row">
-        <span class="svc">House with granny flat or farmhouse — building and pest</span>
-        <span class="amt">$700</span>
-      </div>
-      <div class="row">
-        <span class="svc">New build handover inspection
-          <span class="note">Three inspections included: wall frame stage, lock-up stage, and handover of your new home.</span>
-        </span>
-        <span class="amt">$500</span>
-      </div>
-      <div class="row">
-        <span class="svc">Singular defect report
-          <span class="note">A report on one defect, written to be given to Consumer Affairs or used in a court of law.</span>
-        </span>
-        <span class="amt">$500</span>
-      </div>
-      <div class="docket-foot">Prices include GST and travel across metropolitan Adelaide. Rural South Australia by arrangement, quoted before you commit.</div>
-    </div>
-
-    <div class="two">
-      <div class="col in">
-        <h3>What the price covers</h3>
-        <ul>
-          <li>Robert on site, not a franchisee</li>
-          <li>Roof exterior, roof void and subfloor where accessible</li>
-          <li>Timber pest inspection to AS 4349.3</li>
-          <li>Photographs of every defect raised</li>
-          <li>Report emailed the same evening</li>
-          <li>A phone call to walk you through it</li>
-        </ul>
-      </div>
-      <div class="col out">
-        <h3>What it doesn't cover</h3>
-        <ul>
-          <li>Areas that can't be safely accessed on the day</li>
-          <li>Anything concealed behind wall linings</li>
-          <li>Swimming pool compliance certification</li>
-          <li>Asbestos sampling or laboratory testing</li>
-          <li>Repair work — Robert doesn't quote on what he finds</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="inventory">
-  <div class="wrap">
-    <div class="inv-head">
-      <h2>What Robert is looking for</h2>
-      <p class="n">MAJOR &amp; MINOR DEFECTS</p>
-    </div>
-    <p class="inv-sub">Every report covers identified major and minor defects and faults, including:</p>
-    <div class="inv-list">
-      <div>Brick and mortar deterioration</div>
-      <div>Subsiding foundations</div>
-      <div>Salt damp</div>
-      <div>Drainage and stormwater</div>
-      <div>Structural elements</div>
-      <div>Leaking roofs</div>
-      <div>Leaking gutters</div>
-      <div>Timber framing and roof faults</div>
-      <div>Active water leaks</div>
-      <div>Subfloor ventilation</div>
-      <div>Leaking hot water service</div>
-      <div>Damp proof course</div>
-      <div>Non-compliant downlights</div>
-      <div>Fire hazards</div>
-      <div>Tree root damage</div>
-      <div>Unlevel flooring</div>
-      <div>Bouncy floors</div>
-      <div>Structural cracks</div>
-      <div>Termite and timber borer damage</div>
-    </div>
-  </div>
-</section>
-
-<section class="pad">
-  <div class="wrap">
-    <p class="kicker">HOW IT RUNS</p>
-    <h2 class="big">Booked this morning, read tonight.</h2>
-    <div class="steps">
+    <p class="kick rv">HOW IT RUNS</p>
+    <h2 class="rv">Booked this morning, read tonight.</h2>
+    <div class="steps rv">
       <div class="step">
-        <p class="num">STEP 01</p>
-        <h3>Ring or text Robert</h3>
-        <p>Tell him the address and when your cooling-off period ends. He'll tell you straight away whether he can be there in time.</p>
+        <p class="n">STEP 01</p>
+        <h3>Ring or text him</h3>
+        <p>Tell him the address and when your cooling-off period ends. He'll say straight away whether he can be there in time, and what it'll cost.</p>
       </div>
       <div class="step">
-        <p class="num">STEP 02</p>
-        <h3>He inspects the house</h3>
-        <p>Roof exterior, roof void, subfloor, interior, exterior, garage, retaining walls, drainage and fencing. Usually two to three hours.</p>
+        <p class="n">STEP 02</p>
+        <h3>He inspects it himself</h3>
+        <p>Two to three hours on site. Roof, roof void, subfloor, inside, outside, garage, retaining walls and drainage.</p>
       </div>
       <div class="step">
-        <p class="num">STEP 03</p>
+        <p class="n">STEP 03</p>
         <h3>Report the same evening</h3>
-        <p>Photographed, located and rated major or minor, so you can see what's a settlement problem and what isn't.</p>
+        <p>Photographed, located and rated, with the summary on page one and the access limits named.</p>
       </div>
       <div class="step">
-        <p class="num">STEP 04</p>
-        <h3>He rings you to explain it</h3>
-        <p>Forty years of building in South Australia, on the phone, telling you what he'd do if it were his money.</p>
+        <p class="n">STEP 04</p>
+        <h3>He rings to explain it</h3>
+        <p>Forty years of building in this state, on the phone, telling you what he'd do if it were his money.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="who">
-  <div class="wrap who-grid">
+<section>
+  <div class="wrap quote-grid">
     <div>
       <blockquote>“I've built houses in this state for forty years. I inspect them the same way I built them, and I tell you what I'd do if it were my money.”</blockquote>
       <cite>ROBERT BEZEMER · BLD LIC R37257</cite>
     </div>
     <div>
-      <p>Robert started on the tools in South Australia in the mid-1980s and has spent four decades building, supervising and repairing homes across Adelaide. That's the reason the reports read the way they do: he's fixed most of what he finds.</p>
-      <p>He inspects every property himself. There's no roster of subcontractors and no franchise office between you and the person who walked the roof void. If something in the report isn't clear, the number you ring is his.</p>
-      <p>Inspections are carried out to Australian Standards AS 4349.1 for building and AS 4349.3 for timber pests, and Bezemer Home &amp; Pest Inspections carries current professional indemnity and public liability insurance.</p>
+      <p class="rv">Robert started on the tools in South Australia in the mid-1980s and spent four decades building, supervising and repairing homes across Adelaide. That's why the reports read the way they do: he's fixed most of what he finds.</p>
+      <p class="rv">He inspects every property himself. No roster of subcontractors, no franchise office between you and the person who walked the roof void. If something in the report isn't clear, the number you ring is his.</p>
+      <p class="rv">Inspections are carried out to Australian Standards AS 4349.1 for building and AS 4349.3 for timber pests. The business carries current professional indemnity and public liability insurance, and the SA building licence above can be checked on the public register.</p>
     </div>
   </div>
 </section>
 
-<section class="contact">
+<section class="contact" id="contact">
   <div class="wrap">
     <h2>Ring or text Robert. Seven days.</h2>
+    <p class="sub">Tell him the address and the date your cooling-off period ends. That's the whole booking process.</p>
     <a class="phone" href="tel:+61402105177">0402 105 177</a>
-    <p class="hours">7AM – 8PM, SEVEN DAYS · ADELAIDE &amp; SURROUNDS</p>
-    <p class="mail">Or email <a href="mailto:bez@home-inspection.com.au">bez@home-inspection.com.au</a></p>
+    <p class="c-meta">7AM – 8PM, SEVEN DAYS · ADELAIDE &amp; SURROUNDS</p>
+    <p class="c-mail">Or email <a href="mailto:bez@home-inspection.com.au">bez@home-inspection.com.au</a></p>
   </div>
 </section>
 
@@ -457,13 +398,105 @@ footer{background:#0F1417;color:#79828A;padding:36px 0;font-size:13.5px}
   <div class="wrap">
     <div class="fwrap">
       <div>Bezemer Home &amp; Pest Inspections · Adelaide, South Australia</div>
-      <div style="font-family:var(--mono);font-size:12px">BLD LIC R37257</div>
+      <div class="mono" style="font-size:12px">BLD LIC R37257</div>
     </div>
-    <p class="disclaimer">This page is an unsolicited design concept prepared by Valkyra Labs. It is not affiliated with, endorsed by, or operated by Bezemer Home &amp; Pest Inspections. Business details, prices, licence number and the defect list were taken from the live website at home-inspection.com.au; prices are reproduced as listed with decimal formatting corrected. The sample report extract, trading hours, turnaround time and inclusions are illustrative and are not statements by the business. Photograph slots and review slots are deliberately blank: this concept does not invent inspection photographs or client reviews. Nothing here should be relied on as a quote or an offer.</p>
+    <p class="disc">This page is an unsolicited design concept prepared by Valkyra Labs. It is not affiliated with, endorsed by, or operated by Bezemer Home &amp; Pest Inspections. Business name, phone number, email address, licence number and the defect categories were taken from the live website at home-inspection.com.au. The sample report extract, trading hours, turnaround time and inspection commentary are illustrative and are not statements by the business. Photograph slots and review slots are deliberately blank: this concept does not invent inspection photographs or client reviews. Nothing here is a quote or an offer.</p>
   </div>
 </footer>
 
 <div class="tag">CONCEPT · VALKYRA LABS</div>
+
+<script>
+(function(){
+  var zones = [
+    {
+      title:"Roof exterior",
+      check:"Tiles, ridge capping, valleys, flashings, gutters and downpipes, walked where it's safe to walk.",
+      list:["Cracked or slipped tiles and bedding","Ridge capping and pointing","Valley flashings and penetrations","Gutter fall, rust and overflow","Downpipe connections"],
+      note:"Lifted valley flashing. It's the usual source of the ceiling stain everyone blames on the bathroom."
+    },
+    {
+      title:"Roof void",
+      check:"Up through the manhole with a torch, across the framing where the ceiling will carry weight.",
+      list:["Rafters, purlins and hanging beams","Water staining and active leaks","Insulation coverage and clearances","Downlight clearance to insulation","Vermin and termite leads"],
+      note:"Insulation packed hard against downlights. Costs nothing to pull back and it's a fire risk sitting above the bedrooms."
+    },
+    {
+      title:"Walls and footings",
+      check:"Brickwork inside and out, mortar condition, and the crack patterns that mean movement rather than shrinkage.",
+      list:["Brick and mortar deterioration","Damp proof course and salt damp","Structural cracking and displacement","Lintels over openings","Render condition and drummy sections"],
+      note:"Salt damp climbing past 900mm. That's a breached damp proof course, not a wall that needs re-rendering."
+    },
+    {
+      title:"Subfloor",
+      check:"Under the house on his back with a torch and a moisture meter, wherever there's clearance to get in.",
+      list:["Bearers, joists and piers","Subfloor ventilation and cross-flow","Moisture readings in the timber","Termite workings and borer damage","Bouncy or unlevel flooring above"],
+      note:"Restricted ventilation. It's what brings termites back after the treatment everyone paid for."
+    },
+    {
+      title:"Site and drainage",
+      check:"The ground around the house, which is where most expensive defects actually start.",
+      list:["Stormwater and downpipe discharge","Surface fall away from the building","Retaining wall condition and lean","Tree root proximity","Paving and slab edge levels"],
+      note:"A downpipe discharging at the footing. Cheapest defect in the report and the cause of the dearest one."
+    },
+    {
+      title:"Garage and outbuildings",
+      check:"The parts people stop looking at once they've decided they like the kitchen.",
+      list:["Slab cracking and movement","Lintels and door frames","Carport posts and footings","Fencing and gates","Sheds and lean-tos"],
+      note:"Lintels over the garage opening. They rust, they lift the brickwork, and nobody looks up on inspection day."
+    }
+  ];
+
+  var hots = Array.prototype.slice.call(document.querySelectorAll('.hot'));
+  var elNo = document.getElementById('z-no');
+  var elTitle = document.getElementById('z-title');
+  var elCheck = document.getElementById('z-check');
+  var elList = document.getElementById('z-list');
+  var elNote = document.getElementById('z-note');
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function show(i){
+    var z = zones[i];
+    if(!z) return;
+    elNo.textContent = 'ZONE ' + pad(i + 1);
+    elTitle.textContent = z.title;
+    elCheck.textContent = z.check;
+    elNote.textContent = z.note;
+    elList.innerHTML = '';
+    z.list.forEach(function(item){
+      var li = document.createElement('li');
+      li.textContent = item;
+      elList.appendChild(li);
+    });
+    hots.forEach(function(b, bi){
+      b.setAttribute('aria-pressed', bi === i ? 'true' : 'false');
+      b.classList.remove('pulse');
+    });
+  }
+
+  hots.forEach(function(b, i){
+    b.addEventListener('click', function(){ show(i); });
+    b.addEventListener('mouseenter', function(){ show(i); });
+  });
+
+  show(0);
+  hots[0].classList.add('pulse');
+
+  // reveal on scroll
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -60px 0px' });
+    rv.forEach(function(el){ io.observe(el); });
+  } else {
+    rv.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
 
 </body>
 </html>
